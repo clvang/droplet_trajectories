@@ -13,6 +13,12 @@ setwd(currentDirectory)
 #read in names of all .csv files in current directory
 csvfilenames <- dir(pattern = "*_D2KROUT.csv")
 
+#read experimental parameters for single component droplet experiments
+keyfilename <- dir(pattern="single_key")
+key <- read.csv(file=keyfilename,head=TRUE,sep=",",
+		stringsAsFactors=FALSE)
+
+
 # read each csv file and save variables of interest
 for (i in 1:length(csvfilenames)){
 	
@@ -28,15 +34,36 @@ for (i in 1:length(csvfilenames)){
 	expname <- rep(expname,nrow(temp))
 	df.temp <- cbind(expname, df.temp )
 
+	#grab do for current experiment
+	keyRow <- which(key$expname == expname[1])
+
+
+	#create another data frame to contain variables of interest
+	#for generating scatter plots
+
+	#calculat initial droplet velocity
+	range_index <- seq(1,30)
+	Vo <- mean(sqrt(temp$x_vel_fit[range_index]^2 + temp$y_vel_fit[range_index]^2) )
+
+	#grad pressure for current experiment
+	fuel <- key$fuel[keyRow]
+
+	df.scatter <- data.frame(expname[1],
+							temp$do[1], Vo, fuel)
+
+
 	if ( i == 1){
 		df.global <- df.temp
+		dfscatter.global <- df.scatter
 	}else{
 		df.global <- rbind(df.global, df.temp)
+		dfscatter.global <- rbind(dfscatter.global, df.scatter)
 	}
 }
 df.global <- setNames(df.global, c("expname","time","do",
 									"x_loc_fit","x_vel_fit",
 									"y_loc_fit","y_vel_fit") )
+dfscatter.global <- setNames(dfscatter.global,c("expname","do","Vo","fuel"))
 
 # create vector grouping do sizes and add to df.global
 doSize <- as.character(nrow(df.global))
@@ -73,6 +100,14 @@ size.h <- 12		#specifies height of .pdf of plot in units specified by un
 un <- "in"		#specifies unit of size.w and size.h
 ggsave(p1, file="all_droplet_trajectories.pdf", width=size.w, height=size.h, units=un)
 
+
+
+p2 <- ggplot(dfscatter.global)
+p2 <- p2 + geom_point(mapping=aes(x=do, y=Vo, shape=fuel)) 
+size.w <- 21	    #specifies width of .pdf of plot in units specified by un
+size.h <- 12		#specifies height of .pdf of plot in units specified by un
+un <- "in"		#specifies unit of size.w and size.h
+ggsave(p2, file="dovsVo_all_droplets.pdf", width=size.w, height=size.h, units=un)
 
 
 
