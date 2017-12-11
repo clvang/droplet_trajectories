@@ -121,15 +121,15 @@ p2 <- p2 + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
 	legend.position=c(0.9, 0.75),
 	legend.title = element_blank(),
-	legend.text = element_text(size=6), 
+	legend.text = element_text(size=12), 
 	axis.title.x = element_text(size=12),
 	axis.title.y = element_text(size=12),
 	legend.background = element_rect(fill="white"),
 	legend.key.height = unit(5,"mm"),
 	panel.background = element_rect(fill = "gray90"),
 	axis.text = element_text(size=12,colour="black") ) +
-	guides(colour=guide_legend(ncol=5)) +
-	guides(linetype=guide_legend(ncol=5))	+
+	# guides(colour=guide_legend(ncol=5)) +
+	# guides(linetype=guide_legend(ncol=5))	+
 	xlab(expression("D"[o]*" (mm)") ) +
 	ylab(expression("V"[o]*" (mm/s)") ) 	
 
