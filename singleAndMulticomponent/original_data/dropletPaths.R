@@ -95,18 +95,44 @@ p1 <- p1 + 	theme_bw() +
 	xlab(expression("X (mm)") ) +
 	ylab(expression("Y (mm)") ) 	
 
-size.w <- 21	    #specifies width of .pdf of plot in units specified by un
-size.h <- 12		#specifies height of .pdf of plot in units specified by un
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un
+size.h <- 6		#specifies height of .pdf of plot in units specified by un
 un <- "in"		#specifies unit of size.w and size.h
 ggsave(p1, file="all_droplet_trajectories.pdf", width=size.w, height=size.h, units=un)
 
 
-
+ptsize <- 4.0
 p2 <- ggplot(dfscatter.global)
-p2 <- p2 + geom_point(mapping=aes(x=do, y=Vo, shape=fuel)) 
-size.w <- 21	    #specifies width of .pdf of plot in units specified by un
-size.h <- 12		#specifies height of .pdf of plot in units specified by un
-un <- "in"		#specifies unit of size.w and size.h
+p2 <- p2 + aes(x=do, y=Vo)
+# p2 <- p2 + geom_point(mapping=aes(x=do, y=Vo, shape=fuel, colour=fuel, size=1.2))
+p2 <- p2 + aes(colour=fuel, shape=fuel) 
+p2 <- p2 + geom_point(size=ptsize) +
+			scale_colour_manual(
+				values=c(
+					"#e41a1c",  #red (set1)
+					"#984ea3",  #purple (set1)
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)
+					"#4daf4a",  #green (set1)
+					"#e7298a",  #pink (dark2)
+					"#d95f02",  #brown (dark2)
+					"#377eb8",  #blue (set1)
+					"#66c2a5"))  #army grn (dark2)
+p2 <- p2 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	guides(colour=guide_legend(ncol=5)) +
+	guides(linetype=guide_legend(ncol=5))	+
+	xlab(expression("D"[o]*" (mm)") ) +
+	ylab(expression("V"[o]*" (mm/s)") ) 	
+
 ggsave(p2, file="dovsVo_all_droplets.pdf", width=size.w, height=size.h, units=un)
 
 
