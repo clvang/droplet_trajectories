@@ -27,6 +27,9 @@ for (i in 1:length(csvfilenames)){
 	temp <- read.csv(file=csvfilenames[i],head=TRUE,sep=",",
 		stringsAsFactors=FALSE)	
 
+	#grab do for current experiment
+	keyRow <- which(key$expname == expname[1])
+
 	#extract only variables of interest
 	df.temp <- data.frame(temp$time, temp$do, temp$x_loc_fit,
 						temp$x_vel_fit, temp$y_loc_fit,
@@ -34,8 +37,10 @@ for (i in 1:length(csvfilenames)){
 	expname <- rep(expname,nrow(temp))
 	df.temp <- cbind(expname, df.temp )
 
-	#grab do for current experiment
-	keyRow <- which(key$expname == expname[1])
+	#grab fueltype for current experiment
+	fuel <- key$fuel[keyRow]
+	fuel_type <- rep(fuel,nrow(temp))
+	df.temp <- cbind(df.temp, fuel_type)
 
 
 	#create another data frame to contain variables of interest
@@ -44,9 +49,6 @@ for (i in 1:length(csvfilenames)){
 	#calculat initial droplet velocity
 	range_index <- seq(1,30)
 	Vo <- mean(sqrt(temp$x_vel_fit[range_index]^2 + temp$y_vel_fit[range_index]^2) )
-
-	#grad pressure for current experiment
-	fuel <- key$fuel[keyRow]
 
 	df.scatter <- data.frame(expname[1],
 							temp$do[1], Vo, fuel)
@@ -62,7 +64,8 @@ for (i in 1:length(csvfilenames)){
 }
 df.global <- setNames(df.global, c("expname","time","do",
 									"x_loc_fit","x_vel_fit",
-									"y_loc_fit","y_vel_fit") )
+									"y_loc_fit","y_vel_fit",
+									"fuel") )
 dfscatter.global <- setNames(dfscatter.global,c("expname","do","Vo","fuel"))
 
 # create vector grouping do sizes and add to df.global
@@ -98,7 +101,69 @@ p1 <- p1 + 	theme_bw() +
 size.w <- 10	    #specifies width of .pdf of plot in units specified by un
 size.h <- 6		#specifies height of .pdf of plot in units specified by un
 un <- "in"		#specifies unit of size.w and size.h
-ggsave(p1, file="all_droplet_trajectories.pdf", width=size.w, height=size.h, units=un)
+ggsave(p1, file="dropTraj_all_do.pdf", width=size.w, height=size.h, units=un)
+
+p1v2 <- ggplot(df.global)
+p1v2 <- p1v2 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=fuel)) 
+p1v2 <- p1v2 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=12), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	# guides(colour=guide_legend(ncol=5)) +
+	# guides(linetype=guide_legend(ncol=5))	+
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+ggsave(p1v2, file="dropTraj_all_fuel.pdf", width=size.w, height=size.h, units=un)
+
+
+p1v3 <- ggplot( subset(df.global,df.global$fuel != "Methanol") )
+p1v3 <- p1v3 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=fuel)) 
+p1v3 <- p1v3 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=12), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	# guides(colour=guide_legend(ncol=5)) +
+	# guides(linetype=guide_legend(ncol=5))	+
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+ggsave(p1v3, file="dropTraj_all_fuel2.pdf", width=size.w, height=size.h, units=un)
+
+
+p1v4 <- ggplot( subset(df.global,df.global$fuel != "Pro95/Gly5") )
+p1v4 <- p1v4 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=fuel)) 
+p1v4 <- p1v4 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=12), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	# guides(colour=guide_legend(ncol=5)) +
+	# guides(linetype=guide_legend(ncol=5))	+
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+ggsave(p1v4, file="dropTraj_all_fuel3.pdf", width=size.w, height=size.h, units=un)
 
 
 ptsize <- 4.0
