@@ -19,7 +19,7 @@ library(ggplot2)		#this is needed to generate plots
 library(RColorBrewer)	#this is needed for the color package used in generating plots
 library(grid)			#this is needed for the multiple plot function
 try({
-  source("/Users/changlvang/mygitFiles/data_analysis/rFunctions/multiPlot.R")
+  source("/Users/changvang/mygitFiles/data_analysis/rFunctions/multiPlot.R")
 })
 try({
   source("/home/ucdkemper/mygitfiles/data_analysis/rFunctions/multiPlot.R")
