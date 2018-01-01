@@ -52,7 +52,7 @@ for (i in 1:length(csvfilenames)){
 	#create another data frame to contain variables of interest
 	#for generating scatter plots
 
-	#calculat initial droplet velocity
+	#calculate initial droplet velocity
 	range_index <- seq(1,30)
 	Vo <- mean(sqrt(temp$x_vel_fit[range_index]^2 + temp$y_vel_fit[range_index]^2) )
 
