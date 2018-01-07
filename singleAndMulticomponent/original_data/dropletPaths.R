@@ -48,6 +48,13 @@ for (i in 1:length(csvfilenames)){
 	Dvalue_factor <- rep(Dvalue,nrow(temp))
 	df.temp <- cbind(df.temp, Dvalue_factor)
 
+	#grab xenon molefraction and chamber pressure for
+	#current experiment
+	xe_mf <- key$Xe[keyRow]
+	pressure <- key$p[keyRow]
+	xe <- rep( xe_mf,nrow(temp) )
+	pressure_chamber <- rep( pressure, nrow(temp) )
+	df.temp <- cbind(df.temp, xe, pressure_chamber)
 
 	#create another data frame to contain variables of interest
 	#for generating scatter plots
@@ -81,7 +88,7 @@ for (i in 1:length(csvfilenames)){
 df.global <- setNames(df.global, c("expname","time","do",
 									"x_loc_fit","x_vel_fit",
 									"y_loc_fit","y_vel_fit",
-									"fuel","D") )
+									"fuel","D","Xe","p") )
 dfscatter.global <- setNames(dfscatter.global,c("expname","do","Vo","fuel","Vofc","D"))
 
 # create vector grouping do sizes and add to df.global
@@ -94,6 +101,35 @@ for (i in 1:nrow(df.global)){
 	}
 }
 df.global <- cbind(df.global, doSize)
+
+
+# experiments which have similar diameters to experiments
+# where droplet is just evaporating
+sim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")
+p_similar <- ggplot(subset(df.global, expname == sim_experiments))
+p_similar <- p_similar + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
+p_similar <- p_similar + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	# guides(colour=guide_legend(ncol=5)) +
+	# guides(linetype=guide_legend(ncol=5))	+
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un
+size.h <- 6		#specifies height of .pdf of plot in units specified by un
+un <- "in"		#specifies unit of size.w and size.h
+ggsave(p_similar, file="p_similar.pdf", width=size.w, height=size.h, units=un)
+
+
 
 
 p1 <- ggplot(df.global)
