@@ -107,6 +107,7 @@ df.global <- cbind(df.global, doSize)
 # where droplet is just evaporating
 sim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")
 p_similar <- ggplot(subset(df.global, expname == sim_experiments))
+# p_similar <- ggplot(subset(df.global,   ))
 p_similar <- p_similar + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
 p_similar <- p_similar + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
