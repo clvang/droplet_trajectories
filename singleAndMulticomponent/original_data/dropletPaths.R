@@ -106,8 +106,11 @@ df.global <- cbind(df.global, doSize)
 # experiments which have similar diameters to experiments
 # where droplet is just evaporating
 sim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")
-p_similar <- ggplot(subset(df.global, expname == sim_experiments))
-# p_similar <- ggplot(subset(df.global,   ))
+do_X182M01 <- 3.2
+p_incr <- 0.10
+# p_similar <- ggplot(subset(df.global, expname == sim_experiments))
+p_similar <- ggplot(subset(df.global, 
+			Xe != 0 & fuel== "Methanol" & do <= (1+p_incr)*do_X182M01 & do >= (1-p_incr)*do_X182M01 ) )
 p_similar <- p_similar + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
 p_similar <- p_similar + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
@@ -120,15 +123,13 @@ p_similar <- p_similar + 	theme_bw() +
 	legend.key.height = unit(5,"mm"),
 	panel.background = element_rect(fill = "gray90"),
 	axis.text = element_text(size=12,colour="black") ) +
-	# guides(colour=guide_legend(ncol=5)) +
-	# guides(linetype=guide_legend(ncol=5))	+
 	xlab(expression("X (mm)") ) +
 	ylab(expression("Y (mm)") ) 	
 
 size.w <- 10	    #specifies width of .pdf of plot in units specified by un
 size.h <- 6		#specifies height of .pdf of plot in units specified by un
 un <- "in"		#specifies unit of size.w and size.h
-ggsave(p_similar, file="p_similar.pdf", width=size.w, height=size.h, units=un)
+ggsave(p_similar, file="methanolXenon_doSimilar.pdf", width=size.w, height=size.h, units=un)
 
 
 
