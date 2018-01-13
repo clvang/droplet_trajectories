@@ -1,0 +1,410 @@
+p1
+source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/seq_1/quiverPlots.R', chdir = TRUE)
+p1
+source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/seq_1/quiverPlots.R', chdir = TRUE)
+p1
+source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/seq_1/quiverPlots.R', chdir = TRUE)
+lim
+lim(1)
+lim[1]
+lim[1]+2
+source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/seq_1/quiverPlots.R', chdir = TRUE)
+source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/quiverPlots.R', chdir = TRUE)
+source('~/Box Sync/droplet_particle_tracker/droplet_soot/H20H205/quiverPlots.R', chdir = TRUE)
+source('~/Box Sync/droplet_particle_tracker/droplet_soot/FLEX-210/quiverPlots.R', chdir = TRUE)
+source('~/Box Sync/droplet_particle_tracker/droplet_soot/FLEX-210/N01H301A_200-260/quiverPlots.R', chdir = TRUE)
+source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/tracksmovie/quiverPlots.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/dropletPaths.R', chdir = TRUE)
+currentDirectory
+csvfilenames
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H02H101_IW/d2K_rev26.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+sim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")
+sim_experiments
+sim_experiments[2]
+df_similar <- subset(df.global, expname == sim_experiments)
+df_similar
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+3.2*(1.03)
+3.2*(1.05)
+names(df.global)
+names(dfscatter.global)
+unique(df.global$fuel)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+nrow(xe_mf)
+xe
+size(xe)
+length(xe)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+unique(names(df.global$fuel))
+names(df.globa)
+names(df.global)
+unique(df.global$fuel)
+df.global$do[1]
+df.global$do[1]+1
+1-0.05
+p_similar <- ggplot(subset(df.global, (Xe != 0)&&(fuel== "Methanol")&&(do <= 1.05*do_X182M01)&&(do >= 0.95*do_X182M01)   ))
+p_similarsim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")#
+do_X182M01 <- 3.2;
+sim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")#
+do_X182M01 <- 3.2;
+test <- subset(df.global, (Xe != 0)&&(fuel== "Methanol")&&(do <= 1.05*do_X182M01)&&(do >= 0.95*do_X182M01) )
+test
+test <- subset(df.global, (Xe != 0)&&(fuel== "Methanol") )
+test
+df.global$Xe[2]
+test <- subset(df.global, (Xe != 0) )
+test
+test <- subset(df.global, (Xe != 0)&&(do=="Small") )
+test
+test <- subset(df.global, (Xe != 0)&(do=="Small") )
+test
+test <- subset(df.global, Xe != 0 & do=="Small" )
+test
+test <- subset(df.global, Xe != 0 & doSize=="Small" )
+test
+test <- subset(df.global, Xe != 0 & fuel=="Methanol" & do <= 1.05*do_X182M01 )
+test
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
+keyRow
+names(dfglobal_SamsMams)
+names(dfglobal_centroid)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
+do
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
+do
+expname
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
+path1 <- matrix(c(0,1,2,3,0,1,2,3),4)
+path1
+path2 <- matrix(c(0,1,2,3,4,5,6,7), 4)
+path2
+# Creating two points.#
+    point1 <- c(0, 2, 4, 6)#
+    point2 <- c(0, 1, 2, 3)
+DistanceSq(point1, point2, 4)
+library('SimilarityMeasures')
+DistanceSq(point1, point2, 4)
+point1
+point2
+help(dwt)
+library(dwt)
+library(dtw)
+help(dtw)
+## A noisy sine wave as query#
+idx<-seq(0,6.28,len=100);#
+query<-sin(idx)+runif(100)/10;
+## A cosine is for reference; sin and cos are offset by 25 samples#
+reference<-cos(idx)#
+plot(reference); lines(query,col="blue");
+## Find the best match#
+alignment<-dtw(query,reference);
+## Display the mapping, AKA warping function - may be multiple-valued#
+## Equivalent to: plot(alignment,type="alignment")#
+plot(alignment$index1,alignment$index2,main="Warping function");
+## Confirm: 25 samples off-diagonal alignment#
+lines(1:100-25,col="red")
+names(alignment)
+alignment$normalizedDistance
+xt <- c(1,1,2,3,2,0)
+yt <- c(0,1,1,2,3,2,1)
+testing <-dtw(xt,yt)
+plot(testing$index1,testing$index2,main="Warping function")
+lines(1:100-25,col="red")
+help(dtw)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+names(reference)
+reference
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+names(reference)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+tmin
+tmax
+min(csvfilenames2$time)
+min(csvfilenames3$time)
+tmin <- min(reference$time)#
+tmax <- max(reference$time)
+subset(csvfilenames2$x_loc_fit, t >= tmin & t <= tmax)
+subset(csvfilenames2, t >= tmin & t <= tmax)
+subset(csvfilenames2$x_loc_fit, time >= tmin & time <= tmax)
+subset(csvfilenames2, time >= tmin & time <= tmax)
+subset(csvfilenames2, time >= tmin & time <= tmax)$time
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+names(x_alignment)
+plot(x_alignment$index1,x_alignment$index2,main="Warping function")#
+lines(1:100-25,col="red")
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+totalNormalizedDistance
+totalNormalizedDistance2
+csvfilenames <- dir(pattern = "*_D2KROUT.csv")
+csvfilenames
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+csvfilenames
+length(csvfilenames)
+nrow(csvfilenames)
+test <- c("test1", "test2")
+remove <- "test2"
+test[! test %in% remove]
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+keyRow <- which(key$expname == "X182M01")
+keyRow
+i
+numExperiments
+which(csvfilesnames=="X182M01_D2KROUT.csv")
+which(csvfilenames=="X182M01_D2KROUT.csv")
+csvfilenames[135]
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+totalNormalizeDistance
+totalNormalizedDistance
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+help(dtw)
+totalNormalizedDistance
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/Downloads/v31i07.R', chdir = TRUE)
+q
++
+,
+a
+5
+source('~/Downloads/v31i07.R', chdir = TRUE)
+help(window)
+symmetric2
+plot(x_alignment, type="two",off=1)
+x_alignment
+plot(dtw( reference$x_loc_fit, query$x_loc_fit), type="tow")
+plot(dtw( reference$x_loc_fit, query$x_loc_fit), type="two")
+library("dtw")
+plot(dtw( reference$x_loc_fit, query$x_loc_fit), type="two")
+names(x_alignment)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE), type="two")
+names(reference)
+name(reference)
+reference
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+plot(x_alignment, type="two",off=1)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE), type="two")
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE), type="two", off=1)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE), type="two", off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE), type="two", off=1, match.lty=2, match.indices=20)
+help(readline)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+expanem
+expname
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, open.end=TRUE), type="two",#
+			off=1, match.lty=2, match.indices=20)#
+#
+		dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, open.end=TRUE), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, open.end=TRUE, open.start=TRUE), type="two",#
+			off=1, match.lty=2, match.indices=20)#
+#
+		dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, open.end=TRUE, open.start=TRUE), type="two",#
+			off=1, match.lty=2, match.indices=20)
+dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, open.end=TRUE, open.start=TRUE), type="two",#
+			off=1, match.lty=2, match.indices=20)
+dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, open.end=TRUE, open.begin=TRUE), type="two",#
+			off=1, match.lty=2, match.indices=20)
+dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
+			open.end=TRUE, open.begin=TRUE,#
+			step.pattern = asymmetric), type="two",#
+			off=1, match.lty=2, match.indices=20)
+dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
+			open.end=TRUE, #
+			step.pattern = asymmetric), type="two",#
+			off=1, match.lty=2, match.indices=20)
+dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
+			open.end=TRUE, #
+			step.pattern = symmetric2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
+			open.end=TRUE, #
+			step.pattern = symmetricP05), type="two",#
+			off=1, match.lty=2, match.indices=20)
+dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
+			open.end=TRUE, #
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+help(dtw)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetric), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = asymmetric), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP05), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetric1), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetric2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+help(dtw)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetric2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = asymmetricP0), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = asymmetricP05), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = asymmetricP1), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = asymmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP0), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP05), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP1), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetric2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetric2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=F,#
+			step.pattern = symmetric2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=F,#
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=T,#
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=FALSE,#
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			step.pattern = symmetricP05), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			step.pattern = symmetric1), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			step.pattern = symmetric2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			step.pattern = asymmetric), type="two",#
+			off=1, match.lty=2, match.indices=20)
+alignment <- dtw(test,ref,step.pattern=asymmetric)#
+alignment$distance
+alignment <- dtw(test,ref,step.pattern=asymmetric)
+symmetric1
+plot(rabinerJuangStepPattern(4,"c",TRUE))
+####################################################
+### chunk number 10: plot-sakoechiba-window#
+####################################################
+dtwWindow.plot(sakoeChibaWindow, window.size=2,reference=17, query=13)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetric2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = asymmetric), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = asymmetric2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = asymmetric1), type="two",#
+			off=1, match.lty=2, match.indices=20)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = asymmetricP1), type="two",#
+			off=1, match.lty=2, match.indices=20)
+numExperiments
+query <- read.csv(file=csvfilenames[i],head=TRUE,sep=",",#
+		stringsAsFactors=FALSE)
+query <- read.csv(file=csvfilenames[135],head=TRUE,sep=",",#
+		stringsAsFactors=FALSE)
+query <- read.csv(file=csvfilenames[135],head=TRUE,sep=",",#
+		stringsAsFactors=FALSE)
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+csvfilenames
+query <- read.csv(file=csvfilenames[82],head=TRUE,sep=",",#
+		stringsAsFactors=FALSE)
+csvfilenames[82]
+plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
+			open.end=TRUE,#
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
+dev.new()#
+		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
+			open.end=TRUE, #
+			step.pattern = symmetricP2), type="two",#
+			off=1, match.lty=2, match.indices=20)
