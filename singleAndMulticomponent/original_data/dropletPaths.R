@@ -102,9 +102,12 @@ for (i in 1:nrow(df.global)){
 }
 df.global <- cbind(df.global, doSize)
 
+
 # just a plot of all Methanol-Xenon dorplets for visual observation only
+do_low <- 3.1
+do_high <- 3.8
 metXenon_only <- ggplot(subset(df.global, 
-			Xe != 0 & fuel== "Methanol" & do > 4.0 & do <= 6.0 ) )
+			Xe != 0 & fuel== "Methanol" & do > do_low & do <= do_high ) )
 metXenon_only <- metXenon_only + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
 metXenon_only <- metXenon_only + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
@@ -131,11 +134,13 @@ methXenon_cat1 <- c("X182M01",
 					"X136M01",
 					"X168M05", 
 					# "X175M06",
+					# "X119M02",
+					# "X119M05",					
 					"X119M06",
 					"X119M04",
-					"X136M03",
-					"X119M02",
-					"X119M05")
+					"X136M03")
+
+
 p_methXenon_cat1 <- ggplot(subset(df.global, expname== methXenon_cat1) )
 p_methXenon_cat1 <- p_methXenon_cat1 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
 p_methXenon_cat1 <- p_methXenon_cat1 + 	theme_bw() +
@@ -158,6 +163,66 @@ un <- "in"		#specifies unit of size.w and size.h
 ggsave(p_methXenon_cat1, file="methanolXenon_cat1.pdf", width=size.w, height=size.h, units=un)
 
 
+# list of methanol-xenon experiments with similar trajectories (category 1) to
+# that of X182M01 (an evaporating droplet)
+methXenon_cat2 <- c("X175M06",
+					"X163M04",
+					"X168M07",
+					"X144M05",
+					"X163M02",
+					"X161M05",
+					"X163M03",
+					"X121M03",
+					"X144M01",
+					"X144M06",
+					"X175M04")
+
+p_methXenon_cat2 <- ggplot(subset(df.global, expname== methXenon_cat2) )
+p_methXenon_cat2 <- p_methXenon_cat2 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
+p_methXenon_cat2 <- p_methXenon_cat2 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un
+size.h <- 6		#specifies height of .pdf of plot in units specified by un
+un <- "in"		#specifies unit of size.w and size.h
+ggsave(p_methXenon_cat2, file="methanolXenon_cat2.pdf", width=size.w, height=size.h, units=un)
+
+
+methXenon_cat5 <- c("X163M07",
+					"X163M01",
+					"X119M04",
+					"X121M01")
+p_methXenon_cat5 <- ggplot(subset(df.global, expname== methXenon_cat5) )
+p_methXenon_cat5 <- p_methXenon_cat5 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
+p_methXenon_cat5 <- p_methXenon_cat5 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un
+size.h <- 6		#specifies height of .pdf of plot in units specified by un
+un <- "in"		#specifies unit of size.w and size.h
+ggsave(p_methXenon_cat5, file="methanolXenon_cat5.pdf", width=size.w, height=size.h, units=un)
 
 
 
