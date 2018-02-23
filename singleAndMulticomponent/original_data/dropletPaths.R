@@ -14,7 +14,7 @@ setwd(currentDirectory)
 csvfilenames <- dir(pattern = "*_D2KROUT.csv")
 
 #read experimental parameters for single component droplet experiments
-keyfilename <- dir(pattern="single_key")
+keyfilename <- dir(pattern="single_key.csv")
 key <- read.csv(file=keyfilename,head=TRUE,sep=",",
 		stringsAsFactors=FALSE)
 
@@ -43,7 +43,9 @@ for (i in 1:length(csvfilenames)){
 	fuel_type <- rep(fuel,nrow(temp))
 	df.temp <- cbind(df.temp, fuel_type)
 
-	#grad diffusivities for applicable experiments
+	#grad diffusivities for applicable experiments. This requires
+	#reading in the single_key file with data columns for 
+	#the diffusivities, D
 	Dvalue <- key$D[keyRow]	
 	Dvalue_factor <- rep(Dvalue,nrow(temp))
 	df.temp <- cbind(df.temp, Dvalue_factor)
@@ -84,7 +86,8 @@ for (i in 1:length(csvfilenames)){
 		df.global <- rbind(df.global, df.temp)
 		dfscatter.global <- rbind(dfscatter.global, df.scatter)
 	}
-}
+}  #for csv.filenames
+
 df.global <- setNames(df.global, c("expname","time","do",
 									"x_loc_fit","x_vel_fit",
 									"y_loc_fit","y_vel_fit",
@@ -319,7 +322,7 @@ p1v3 <- p1v3 + 	theme_bw() +
 	xlab(expression("X (mm)") ) +
 	ylab(expression("Y (mm)") ) 	
 
-ggsave(p1v3, file="dropTraj_all_fuel2.pdf", width=size.w, height=size.h, units=un)
+ggsave(p1v3, file="dropTraj_all_hepProGly.pdf", width=size.w, height=size.h, units=un)
 
 
 p1v4 <- ggplot( subset(df.global,df.global$fuel != "Pro95/Gly5") )
@@ -340,7 +343,7 @@ p1v4 <- p1v4 + 	theme_bw() +
 	xlab(expression("X (mm)") ) +
 	ylab(expression("Y (mm)") ) 	
 
-ggsave(p1v4, file="dropTraj_all_fuel3.pdf", width=size.w, height=size.h, units=un)
+ggsave(p1v4, file="dropTraj_all_hepMethanol.pdf", width=size.w, height=size.h, units=un)
 
 
 

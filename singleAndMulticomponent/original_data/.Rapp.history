@@ -1,410 +1,743 @@
-p1
-source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/seq_1/quiverPlots.R', chdir = TRUE)
-p1
-source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/seq_1/quiverPlots.R', chdir = TRUE)
-p1
-source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/seq_1/quiverPlots.R', chdir = TRUE)
-lim
-lim(1)
-lim[1]
-lim[1]+2
-source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/seq_1/quiverPlots.R', chdir = TRUE)
-source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/quiverPlots.R', chdir = TRUE)
-source('~/Box Sync/droplet_particle_tracker/droplet_soot/H20H205/quiverPlots.R', chdir = TRUE)
-source('~/Box Sync/droplet_particle_tracker/droplet_soot/FLEX-210/quiverPlots.R', chdir = TRUE)
-source('~/Box Sync/droplet_particle_tracker/droplet_soot/FLEX-210/N01H301A_200-260/quiverPlots.R', chdir = TRUE)
-source('~/Box Sync/droplet_particle_tracker/droplet_soot/C083A02/tracksmovie/quiverPlots.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/dropletPaths.R', chdir = TRUE)
-currentDirectory
+update.packages(checkBuilt=TRUE)
+source('~/mygitFiles/hephex_scatterplots/hephexPlotsASGSR.Rev04.R', chdir = TRUE)
+source('~/mygitFiles/hephex_scatterplots/createPlot.R', chdir = TRUE)
+source('~/mygitFiles/hephex_scatterplots/hephexPlotsASGSR.Rev04.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M06_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M06_RL/X175M06A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M06_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M04_RL/X163M04A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M04_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M07_RL/X168M07A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M07_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M05_RL/X144M05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M05_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M02_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X161M05_RL/X161M05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X161M05_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M03_RL/X163M03A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M03_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X121M03_RL/X121M03A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X121M03_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M06_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M01_RL/X144M01A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M01_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M04_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X149M01_RL/X149M01B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X161M05_RL/X161M05B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M04_RL/averagingScript.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M02_RL/averagingScript.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M03_RL/averagingScript.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M04_RL/averagingScript.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D02_RL/C077D02A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/X168M02A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/X168M02D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/X168M02B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+# Plot separate ggplot figures in a loop.#
+library(ggplot2)#
+#
+# Make list of variable names to loop over.#
+var_list = combn(names(iris)[1:3], 2, simplify=FALSE)#
+#
+# Make plots.#
+plot_list = list()#
+for (i in 1:3) {#
+    p = ggplot(iris, aes_string(x=var_list[[i]][1], y=var_list[[i]][2])) +#
+        geom_point(size=3, aes(colour=Species))#
+    plot_list[[i]] = p#
+}
+# Save plots to tiff. Makes a separate file for each plot.#
+for (i in 1:3) {#
+    file_name = paste("iris_plot_", i, ".tiff", sep="")#
+    tiff(file_name)#
+    print(plot_list[[i]])#
+    dev.off()#
+}
+plot_list
+plot_list[[1]]
+help(list())
+help(list)
+help(combn)
+var_list
+names(irus)
+names(iris)
+var_list[[1]]
+var_list[[1]][1]
+var_list[[2]][1]
+var_list[[3]][1]
+iris$Sepal.Length
+## Import required packages ###
+library(ggplot2)#
+library(dplyr)#
+## Create data frame with values for both parametric equations ###
+heartdf = data_frame(#
+  t = seq(0, 2*pi, pi/60), #
+  x = 16*sin(t)^3, #x values for heart curve#
+  y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t), #y values for heart curve#
+  x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1), #x values for leminiscate#
+  y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1) #y values for lemniscate#
+  )#
+## Create plot ###
+p = ggplot(data = heartdf, aes(x, y)) + #
+  geom_path(aes(group = 1)) +#
+  geom_path(aes(group = 1, x = x2, y= y2), size = 2, colour = "red") +#
+  geom_polygon(aes(group = 1), fill = "red") +#
+  geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!"), #
+            size = 10, colour = "white")#
+p
+textdf = data_frame(t = max(heartdf$t) + 1:25)
+textdf
+names(textdf)
+textdf$t
+heartdf$time
+heartdf$t
+# install gganimate from GitHub#
+library(devtools)#
+install_github("dgrtwo/gganimate")#
+# install ImageMagick#
+library(installr)#
+install.ImageMagick()
+install.ImageMagick()
+library(installr)
+.libPaths()
+install.packages("magick")
+# Import packages ##
+library(ggplot2)#
+library(dplyr)#
+library(animation)#
+library(gganimate)
+## Create data frame with values for both parametric equations ###
+heartdf = data_frame(#
+ t = seq(0, 2*pi, pi/60),#
+ x = 16*sin(t)^3,#
+ y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t),#
+ x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1),#
+ y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1)#
+)#
+# Create frame variable for text ##
+textdf = data_frame(t = max(heartdf$t) + 1:25)#
+# Create plot ##
+p = ggplot(data = heartdf, #
+           aes(x, y, frame = round(t, 1), cumulative = TRUE)) + #
+ geom_path(aes(group = 1)) +#
+ geom_path(aes(group = 2, x = x2, y= y2), size = 2, colour = "red") +#
+ geom_polygon(aes(group = 1), fill = "red") +#
+ geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!", #
+           frame = t), data = textdf, size = 10, colour = "white")#
+ani.options(interval = 0.06) #animation speed, seconds per frame#
+gganimate(p, title_frame = FALSE)
+round(t, 1)
+textdf
+data_frame
+help(data_frame)
+heartdf$t
+round(heartdf$t)
+round(heartdf$t,1)
+library(plotly)
+install.packages("plotly")
+library(plotly)#
+plot_ly(z = ~volcano)
+source('~/Desktop/Ranimation_example.R', chdir = TRUE)
+# Import packages ##
+library(ggplot2)#
+library(dplyr)#
+library(animation)#
+library(gganimate)
+source('~/Desktop/Ranimation_example.R', chdir = TRUE)
+#---------------- creates animation ---------------------##
+## Create data frame with values for both parametric equations ###
+heartdf = data_frame(#
+ t = seq(0, 2*pi, pi/60),#
+ x = 16*sin(t)^3,#
+ y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t),#
+ x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1),#
+ y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1)#
+)#
+# Create frame variable for text ##
+textdf = data_frame(t = max(heartdf$t) + 1:25)#
+# Create plot ##
+p = ggplot(data = heartdf, #
+           aes(x, y, frame = round(t, 1), cumulative = TRUE)) + #
+ geom_path(aes(group = 1)) +#
+ geom_path(aes(group = 2, x = x2, y= y2), size = 2, colour = "red") +#
+ geom_polygon(aes(group = 1), fill = "red") +#
+ geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!", #
+           frame = t), data = textdf, size = 10, colour = "white")#
+ani.options(interval = 0.06) #animation speed, seconds per frame#
+gganimate(p, title_frame = FALSE)
+source('~/Desktop/Ranimation_example.R', chdir = TRUE)
+ggplotly(p)
+g <- crosstalk::SharedData$new(gapminder, ~continent)#
+gg <- ggplot(g, aes(gdpPercap, lifeExp, color = continent, frame = year)) +#
+  geom_point(aes(size = pop, ids = country)) +#
+  geom_smooth(se = FALSE, method = "lm") +#
+  scale_x_log10()#
+ggplotly(gg) %>% #
+  highlight("plotly_hover")
+g <- crosstalk::SharedData$new(gapminder, ~continent)
+data(gapminder, package = "gapminder")
+g <- crosstalk::SharedData$new(gapminder, ~continent)
+gg <- ggplot(g, aes(gdpPercap, lifeExp, color = continent, frame = year)) +#
+  geom_point(aes(size = pop, ids = country)) +#
+  geom_smooth(se = FALSE, method = "lm") +#
+  scale_x_log10()#
+ggplotly(gg) %>% #
+  highlight("plotly_hover")
+library(animation)#
+library(ggplot2)#
+#
+## Brownian Motion: the 'parallel' version#
+generate_bm_data = function(n = 20, grp = 4) {#
+    nmax = ani.options("nmax")#
+    bm.data = NULL#
+    x = rnorm(n * grp)#
+    y = rnorm(n * grp)#
+    for (i in 1:nmax) {#
+        bm.data = rbind(bm.data, cbind(x = x <- x + rnorm(n * grp), y = y <- y + rnorm(n * grp), #
+                               step = i, group = rep(1:grp, each = n), id = rep(1:n, grp)))#
+    }#
+    bm.data = as.data.frame(bm.data)#
+    bm.data$id = factor(bm.data$id)#
+    bm.data$group = factor(bm.data$group)#
+    bm.data#
+}#
+#
+## generate the data#
+set.seed(123)#
+ani.options(nmax = 50)#
+n = 20; grp = 4#
+bm.data = generate_bm_data(n, grp)#
+#
+## save images and convert them to a single GIF#
+saveMovie({#
+    for (i in unique(bm.data$step)) {#
+        print(qplot(x, y, facets = ~group, geom = "line", colour = id, alpha = I(0.1), #
+                               data = subset(bm.data, step <= i), main = paste("step", i)) + #
+              xlim(range(bm.data$x)) + ylim(range(bm.data$x)) + #
+              geom_point(aes(x = x, y = y, facets = ~group, size = I(rep(3, n * grp))), #
+                               data = subset(bm.data, step == i)) + #
+              theme_bw() + opts(legend.position = "none"))#
+    }#
+}, interval = 0.2, movie.name = "ggplot2-brownian-motion.gif", ani.width = 600, ani.height = 600)
+## record the solutions in each iteration for each group#
+generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
+    0, 10)) {#
+    grp = i = 1#
+    nmax = ani.options("nmax")#
+    nms = names(formals(FUN))#
+    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
+    sol.data = NULL#
+    for (s in init) {#
+        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
+        for (k in 1:(nmax - 2)) {#
+            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
+        }#
+        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
+            group = grp))#
+        grp = grp + 1#
+    }#
+    sol.data = as.data.frame(sol.data)#
+    sol.data$group = factor(sol.data$group)#
+    sol.data#
+}#
+#
+## generate the data#
+set.seed(123)#
+ani.options(nmax = 30)#
+FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
+newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
+x0 = seq(-5, 5, length = 50)#
+y0 = FUN(x0)#
+newton.data$zero = 0#
+#
+p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
+#
+## convert to GIF#
+saveMovie({   #
+    for (i in unique(newton.data$iter)) {        #
+        ann.col = rep(c("history", "current"), c(i - 1, 1))#
+        with(newton.data, {#
+            print(qplot(solution, zero, facets = ~group, color = ann.col, #
+                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
+                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
+                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
+                                data = subset(newton.data, iter == i)) + #
+                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
+                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
+                         theme_bw() + opts(legend.position = "none"))#
+        })#
+    }   #
+}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
+library(animation)#
+library(ggplot2)#
+## record the solutions in each iteration for each group#
+generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
+    0, 10)) {#
+    grp = i = 1#
+    nmax = ani.options("nmax")#
+    nms = names(formals(FUN))#
+    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
+    sol.data = NULL#
+    for (s in init) {#
+        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
+        for (k in 1:(nmax - 2)) {#
+            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
+        }#
+        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
+            group = grp))#
+        grp = grp + 1#
+    }#
+    sol.data = as.data.frame(sol.data)#
+    sol.data$group = factor(sol.data$group)#
+    sol.data#
+}#
+#
+## generate the data#
+set.seed(123)#
+ani.options(nmax = 30)#
+FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
+newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
+x0 = seq(-5, 5, length = 50)#
+y0 = FUN(x0)#
+newton.data$zero = 0#
+#
+p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
+#
+## convert to GIF#
+saveMovie({   #
+    for (i in unique(newton.data$iter)) {        #
+        ann.col = rep(c("history", "current"), c(i - 1, 1))#
+        with(newton.data, {#
+            print(qplot(solution, zero, facets = ~group, color = ann.col, #
+                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
+                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
+                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
+                                data = subset(newton.data, iter == i)) + #
+                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
+                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
+                         theme_bw() + opts(legend.position = "none"))#
+        })#
+    }   #
+}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
+library(animation)#
+library(ggplot2)#
+## record the solutions in each iteration for each group#
+generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
+    0, 10)) {#
+    grp = i = 1#
+    nmax = ani.options("nmax")#
+    nms = names(formals(FUN))#
+    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
+    sol.data = NULL#
+    for (s in init) {#
+        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
+        for (k in 1:(nmax - 2)) {#
+            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
+        }#
+        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
+            group = grp))#
+        grp = grp + 1#
+    }#
+    sol.data = as.data.frame(sol.data)#
+    sol.data$group = factor(sol.data$group)#
+    sol.data#
+}#
+#
+## generate the data#
+set.seed(123)#
+ani.options(nmax = 30)#
+FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
+newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
+x0 = seq(-5, 5, length = 50)#
+y0 = FUN(x0)#
+newton.data$zero = 0#
+#
+p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
+#
+## convert to GIF#
+saveGIF({   #
+    for (i in unique(newton.data$iter)) {        #
+        ann.col = rep(c("history", "current"), c(i - 1, 1))#
+        with(newton.data, {#
+            print(qplot(solution, zero, facets = ~group, color = ann.col, #
+                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
+                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
+                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
+                                data = subset(newton.data, iter == i)) + #
+                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
+                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
+                         theme_bw() + opts(legend.position = "none"))#
+        })#
+    }   #
+}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
+library(animation)#
+library(ggplot2)#
+## record the solutions in each iteration for each group#
+generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
+    0, 10)) {#
+    grp = i = 1#
+    nmax = ani.options("nmax")#
+    nms = names(formals(FUN))#
+    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
+    sol.data = NULL#
+    for (s in init) {#
+        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
+        for (k in 1:(nmax - 2)) {#
+            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
+        }#
+        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
+            group = grp))#
+        grp = grp + 1#
+    }#
+    sol.data = as.data.frame(sol.data)#
+    sol.data$group = factor(sol.data$group)#
+    sol.data#
+}#
+#
+## generate the data#
+set.seed(123)#
+ani.options(nmax = 30)#
+FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
+newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
+x0 = seq(-5, 5, length = 50)#
+y0 = FUN(x0)#
+newton.data$zero = 0#
+#
+p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
+#
+## convert to GIF#
+saveGIF({   #
+    for (i in unique(newton.data$iter)) {        #
+        ann.col = rep(c("history", "current"), c(i - 1, 1))#
+        with(newton.data, {#
+            print(qplot(solution, zero, facets = ~group, color = ann.col, #
+                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
+                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
+                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
+                                data = subset(newton.data, iter == i)) + #
+                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
+                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
+                         theme_bw() #+ opts(legend.position = "none"))#
+        })#
+    }   #
+}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
+library(animation)#
+library(ggplot2)#
+## record the solutions in each iteration for each group#
+generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
+    0, 10)) {#
+    grp = i = 1#
+    nmax = ani.options("nmax")#
+    nms = names(formals(FUN))#
+    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
+    sol.data = NULL#
+    for (s in init) {#
+        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
+        for (k in 1:(nmax - 2)) {#
+            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
+        }#
+        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
+            group = grp))#
+        grp = grp + 1#
+    }#
+    sol.data = as.data.frame(sol.data)#
+    sol.data$group = factor(sol.data$group)#
+    sol.data#
+}#
+#
+## generate the data#
+set.seed(123)#
+ani.options(nmax = 30)#
+FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
+newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
+x0 = seq(-5, 5, length = 50)#
+y0 = FUN(x0)#
+newton.data$zero = 0#
+#
+p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
+#
+## convert to GIF#
+saveGIF({   #
+    for (i in unique(newton.data$iter)) {        #
+        ann.col = rep(c("history", "current"), c(i - 1, 1))#
+        with(newton.data, {#
+            print(qplot(solution, zero, facets = ~group, color = ann.col, #
+                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
+                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
+                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
+                                data = subset(newton.data, iter == i)) + #
+                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
+                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
+                         theme_bw() ) #+ opts(legend.position = "none"))#
+        })#
+    }   #
+}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
+sofiamolodanof
+# Import packages ##
+library(ggplot2)#
+library(dplyr)#
+library(animation)#
+library(gganimate)#
+ ## Import required packages ###
+# ## Create data frame with values for both parametric equations ###
+# heartdf = data_frame(#
+#   t = seq(0, 2*pi, pi/60), #
+#   x = 16*sin(t)^3, #x values for heart curve#
+#   y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t), #y values for heart curve#
+#   x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1), #x values for leminiscate#
+#   y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1) #y values for lemniscate#
+#   )#
+# ## Create plot ###
+# p = ggplot(data = heartdf, aes(x, y)) + #
+#   geom_path(aes(group = 1)) +#
+#   geom_path(aes(group = 1, x = x2, y= y2), size = 2, colour = "red") +#
+#   geom_polygon(aes(group = 1), fill = "red") +#
+#   geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!"), #
+#             size = 10, colour = "white")#
+# p#
+#
+#---------------- creates animation ---------------------##
+## Create data frame with values for both parametric equations ###
+heartdf = data_frame(#
+ t = seq(0, 2*pi, pi/60),#
+ x = 16*sin(t)^3,#
+ y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t),#
+ x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1),#
+ y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1)#
+)#
+# Create frame variable for text ##
+textdf = data_frame(t = max(heartdf$t) + 1:25)#
+# Create plot ##
+p = ggplot(data = heartdf, #
+           aes(x, y, frame = round(t, 1), cumulative = TRUE)) + #
+ geom_path(aes(group = 1)) +#
+ geom_path(aes(group = 2, x = x2, y= y2), size = 2, colour = "red") +#
+ geom_polygon(aes(group = 1), fill = "red") +#
+ geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!", #
+           frame = t), data = textdf, size = 10, colour = "white")#
+ani.options(interval = 0.06) #animation speed, seconds per frame#
+gganimate(p, title_frame = FALSE)#
+#
+# ggplotly(p)
+library(plotly)#
+#
+data(gapminder, package = "gapminder")#
+g <- crosstalk::SharedData$new(gapminder, ~continent)#
+gg <- ggplot(g, aes(gdpPercap, lifeExp, color = continent, frame = year)) +#
+  geom_point(aes(size = pop, ids = country)) +#
+  geom_smooth(se = FALSE, method = "lm") +#
+  scale_x_log10()#
+ggplotly(gg) %>% #
+  highlight("plotly_hover")
+devtools::install_github('hadley/ggplot2')
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/plotFbyF.R', chdir = TRUE)
+executeCommand2
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/plotFbyF.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M05_RL/plotFbyF.R', chdir = TRUE)
+accTrajectoriesFiltered
+min(accTrajectoriesFiltered$time)
+min(dataFiltered$time)
+min(dDataFiltered$time)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M05_RL/X168M05D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M05_RL/X168M05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M05_RL/X168M05B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M03_RL/plotFbyF.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M02_RL/plotFbyF.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M04_RL/plotFbyF.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M03_RL/plotFbyF.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D05_RL/C101D05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D05_RL/C101D05B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D05_RL/C101D05D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D02_RL/C101D02A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D02_RL/C101D02B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D02_RL/C101D02D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C080D05_RL/C080D05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C080D05_RL/C080D05B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D06_RL/C077D06B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D06_RL/C077D06B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+setwd('$HOME')
+setwd('/Users/changvang'')
+)
+''
+setwd('/Users/changvang')
+Sys.setenv
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+igExt_times
+names(igExt_times)
+igExt_times$T_EXTINCTION
+igExt_times$T_EXTINCTION[2]
 csvfilenames
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H02H101_IW/d2K_rev26.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
-sim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")
-sim_experiments
-sim_experiments[2]
-df_similar <- subset(df.global, expname == sim_experiments)
-df_similar
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
-3.2*(1.03)
-3.2*(1.05)
-names(df.global)
-names(dfscatter.global)
-unique(df.global$fuel)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
-nrow(xe_mf)
-xe
-size(xe)
-length(xe)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
-unique(names(df.global$fuel))
-names(df.globa)
-names(df.global)
-unique(df.global$fuel)
-df.global$do[1]
-df.global$do[1]+1
-1-0.05
-p_similar <- ggplot(subset(df.global, (Xe != 0)&&(fuel== "Methanol")&&(do <= 1.05*do_X182M01)&&(do >= 0.95*do_X182M01)   ))
-p_similarsim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")#
-do_X182M01 <- 3.2;
-sim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")#
-do_X182M01 <- 3.2;
-test <- subset(df.global, (Xe != 0)&&(fuel== "Methanol")&&(do <= 1.05*do_X182M01)&&(do >= 0.95*do_X182M01) )
-test
-test <- subset(df.global, (Xe != 0)&&(fuel== "Methanol") )
-test
-df.global$Xe[2]
-test <- subset(df.global, (Xe != 0) )
-test
-test <- subset(df.global, (Xe != 0)&&(do=="Small") )
-test
-test <- subset(df.global, (Xe != 0)&(do=="Small") )
-test
-test <- subset(df.global, Xe != 0 & do=="Small" )
-test
-test <- subset(df.global, Xe != 0 & doSize=="Small" )
-test
-test <- subset(df.global, Xe != 0 & fuel=="Methanol" & do <= 1.05*do_X182M01 )
-test
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
-keyRow
-names(dfglobal_SamsMams)
-names(dfglobal_centroid)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
-do
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
-do
-expname
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/samsMamsDropletPaths.R', chdir = TRUE)
-path1 <- matrix(c(0,1,2,3,0,1,2,3),4)
-path1
-path2 <- matrix(c(0,1,2,3,4,5,6,7), 4)
-path2
-# Creating two points.#
-    point1 <- c(0, 2, 4, 6)#
-    point2 <- c(0, 1, 2, 3)
-DistanceSq(point1, point2, 4)
-library('SimilarityMeasures')
-DistanceSq(point1, point2, 4)
-point1
-point2
-help(dwt)
-library(dwt)
-library(dtw)
-help(dtw)
-## A noisy sine wave as query#
-idx<-seq(0,6.28,len=100);#
-query<-sin(idx)+runif(100)/10;
-## A cosine is for reference; sin and cos are offset by 25 samples#
-reference<-cos(idx)#
-plot(reference); lines(query,col="blue");
-## Find the best match#
-alignment<-dtw(query,reference);
-## Display the mapping, AKA warping function - may be multiple-valued#
-## Equivalent to: plot(alignment,type="alignment")#
-plot(alignment$index1,alignment$index2,main="Warping function");
-## Confirm: 25 samples off-diagonal alignment#
-lines(1:100-25,col="red")
-names(alignment)
-alignment$normalizedDistance
-xt <- c(1,1,2,3,2,0)
-yt <- c(0,1,1,2,3,2,1)
-testing <-dtw(xt,yt)
-plot(testing$index1,testing$index2,main="Warping function")
-lines(1:100-25,col="red")
-help(dtw)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-names(reference)
-reference
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-names(reference)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-tmin
-tmax
-min(csvfilenames2$time)
-min(csvfilenames3$time)
-tmin <- min(reference$time)#
-tmax <- max(reference$time)
-subset(csvfilenames2$x_loc_fit, t >= tmin & t <= tmax)
-subset(csvfilenames2, t >= tmin & t <= tmax)
-subset(csvfilenames2$x_loc_fit, time >= tmin & time <= tmax)
-subset(csvfilenames2, time >= tmin & time <= tmax)
-subset(csvfilenames2, time >= tmin & time <= tmax)$time
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-names(x_alignment)
-plot(x_alignment$index1,x_alignment$index2,main="Warping function")#
-lines(1:100-25,col="red")
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-totalNormalizedDistance
-totalNormalizedDistance2
 csvfilenames <- dir(pattern = "*_D2KROUT.csv")
 csvfilenames
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
+currentDirectory
+setwd(currentDirectory)
+csvfilenames <- dir(pattern = "*_D2KROUT.csv")
 csvfilenames
-length(csvfilenames)
-nrow(csvfilenames)
-test <- c("test1", "test2")
-remove <- "test2"
-test[! test %in% remove]
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-keyRow <- which(key$expname == "X182M01")
-keyRow
+pmatch('C101D05',csvfilenames)
+csvfilenames[14]
+igExt_times$FLEX_ID[1]
+rm(list=ls(all=TRUE))		#clear workspace of all variables#
+#
+library(ggplot2)		#this is needed to generate plots#
+library(RColorBrewer)	#this is needed for the color package used in generating plots#
+#
+currentDirectory <- getwd()#
+setwd(currentDirectory)#
+graphics.off()#
+#
+########## READ RELEVANT FILES/DATA AND ASK FOR USER INPUT ###########
+#read in names of all .csv files in current directory#
+csvfilenames <- dir(pattern = "*_D2KROUT.csv")#
+#
+#read in key containing ignition and extinction times of experiments#
+igExt_times <- read.csv(file = "/Users/changvang/mygitFiles/flex_experiment_information/ignitionExtinctionTimes.csv",#
+			head=TRUE, sep=",",#
+			stringsAsFactors=FALSE)#
+#
+i <- 1#
+pmatch(igExt_times$FLEX_ID[i],csvfilenames)
+currentExpData_index <- pmatch(expName,csvfilenames)#
+currentExpData <- read.csv(file=csvfilenames[currentExpData_index])
+csvfilenames[2]
+currentExpData_index
+expName <- igExt_times$FLEX_ID[i]#
+currentExpData_index <- pmatch(expName,csvfilenames)
+currentExpData_index
+currentExpData <- read.csv(file=csvfilenames[currentExpData_index])
+currentExpData
+names(currentExpData)
+nrow(currentExpData)
+expName_Array <- rep(expName,nrow(currentExpData))
+expName_Array
+names(currentExpData)
+# create global data frame#
+globalDataframe <- data.frame(expName_Array, #
+					currentExpData$time,#
+					currentExpData$tot_vel_fit)
+globalDataframe
+nrow(igExt_times)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+globalDataframe
+# set names in global data frame#
+globalDataframe <- setNames(globalDataframe, c("expname","time","vel_mag")
+)
+names(globalDataframe)
+names(igExt_times)
+names(currentExpData)
+print(igExt_times$T_IGNITION[i])#
+	timeIndexMatch <- which.min(abs(currentExpData$time - igExt_times$T_IGNITION[i]))
 i
-numExperiments
-which(csvfilesnames=="X182M01_D2KROUT.csv")
-which(csvfilenames=="X182M01_D2KROUT.csv")
-csvfilenames[135]
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-totalNormalizeDistance
-totalNormalizedDistance
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-help(dtw)
-totalNormalizedDistance
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/Downloads/v31i07.R', chdir = TRUE)
-q
-+
-,
-a
-5
-source('~/Downloads/v31i07.R', chdir = TRUE)
-help(window)
-symmetric2
-plot(x_alignment, type="two",off=1)
-x_alignment
-plot(dtw( reference$x_loc_fit, query$x_loc_fit), type="tow")
-plot(dtw( reference$x_loc_fit, query$x_loc_fit), type="two")
-library("dtw")
-plot(dtw( reference$x_loc_fit, query$x_loc_fit), type="two")
-names(x_alignment)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE), type="two")
-names(reference)
-name(reference)
-reference
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-plot(x_alignment, type="two",off=1)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE), type="two")
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE), type="two", off=1)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE), type="two", off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE), type="two", off=1, match.lty=2, match.indices=20)
-help(readline)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-expanem
-expname
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, open.end=TRUE), type="two",#
-			off=1, match.lty=2, match.indices=20)#
-#
-		dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, open.end=TRUE), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, open.end=TRUE, open.start=TRUE), type="two",#
-			off=1, match.lty=2, match.indices=20)#
-#
-		dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, open.end=TRUE, open.start=TRUE), type="two",#
-			off=1, match.lty=2, match.indices=20)
-dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, open.end=TRUE, open.start=TRUE), type="two",#
-			off=1, match.lty=2, match.indices=20)
-dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, open.end=TRUE, open.begin=TRUE), type="two",#
-			off=1, match.lty=2, match.indices=20)
-dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
-			open.end=TRUE, open.begin=TRUE,#
-			step.pattern = asymmetric), type="two",#
-			off=1, match.lty=2, match.indices=20)
-dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
-			open.end=TRUE, #
-			step.pattern = asymmetric), type="two",#
-			off=1, match.lty=2, match.indices=20)
-dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
-			open.end=TRUE, #
-			step.pattern = symmetric2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
-			open.end=TRUE, #
-			step.pattern = symmetricP05), type="two",#
-			off=1, match.lty=2, match.indices=20)
-dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
-			open.end=TRUE, #
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-help(dtw)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/testing.R', chdir = TRUE)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetric), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = asymmetric), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP05), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetric1), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetric2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-help(dtw)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetric2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = asymmetricP0), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = asymmetricP05), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = asymmetricP1), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = asymmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP0), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP05), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP1), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetric2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetric2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=F,#
-			step.pattern = symmetric2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=F,#
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=T,#
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=FALSE,#
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			step.pattern = symmetricP05), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			step.pattern = symmetric1), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			step.pattern = symmetric2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			step.pattern = asymmetric), type="two",#
-			off=1, match.lty=2, match.indices=20)
-alignment <- dtw(test,ref,step.pattern=asymmetric)#
-alignment$distance
-alignment <- dtw(test,ref,step.pattern=asymmetric)
-symmetric1
-plot(rabinerJuangStepPattern(4,"c",TRUE))
-####################################################
-### chunk number 10: plot-sakoechiba-window#
-####################################################
-dtwWindow.plot(sakoeChibaWindow, window.size=2,reference=17, query=13)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetric2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = asymmetric), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = asymmetric2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = asymmetric1), type="two",#
-			off=1, match.lty=2, match.indices=20)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = asymmetricP1), type="two",#
-			off=1, match.lty=2, match.indices=20)
-numExperiments
-query <- read.csv(file=csvfilenames[i],head=TRUE,sep=",",#
-		stringsAsFactors=FALSE)
-query <- read.csv(file=csvfilenames[135],head=TRUE,sep=",",#
-		stringsAsFactors=FALSE)
-query <- read.csv(file=csvfilenames[135],head=TRUE,sep=",",#
-		stringsAsFactors=FALSE)
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-csvfilenames
-query <- read.csv(file=csvfilenames[82],head=TRUE,sep=",",#
-		stringsAsFactors=FALSE)
-csvfilenames[82]
-plot(dtw( reference$x_loc_fit, query$x_loc_fit, k=TRUE, #
-			open.end=TRUE,#
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
-dev.new()#
-		plot(dtw( reference$y_loc_fit, query$y_loc_fit, k=TRUE, #
-			open.end=TRUE, #
-			step.pattern = symmetricP2), type="two",#
-			off=1, match.lty=2, match.indices=20)
+timeIndexMatch
+currentExpData[185]
+currentExpData$time[185]
+currentExpData$time[184]
+currentExpData$time[186]
+currentExpData$time[185] -  6.1167
+currentExpData$time[184] -  6.1167
+currentExpData$time[186] -  6.1167
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+timeIndexMatchLocal
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+timeIndexMatchGlobal
+i
+timeIndexMatchLocal
+timeIndexMatchGlobal
+timeIndexMatchGlobal[i] <- timeIndexMatchLocal
+timeIndexMatchGlobal <- numeric(nrow(igExt_times))
+timeIndexMatchGlobal
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+timeIndexMatchGlobal
+igExt_time
+igExt_times
+globalDataframe$time[126]
+globalDataframe$time[532]
+globalDataframe$time[634]
+timeIndexMatchLocal
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+timeIndexMatchGlobal
+igExt_times
+globalDataframe$time[1041]
+globalDataframe$time[1040]
+globalDataframe$time[1042]
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+igExt_times
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+igExt_times
+EXT_timeIndexMatchGlobal
+globalDataframe$time[292]
+globalDataframe$time[772]
+globalDataframe$time[1332]
+names(globalDataframe)
+# overall velocity magnitude plot#
+velMagnitudePlot <- ggplot(globalDataframe )#
+velMagnitudePlot <- velMagnitudePlot + geom_point(mapping=aes(x=time, y=vel_mag, colour=expname)) #
+velMagnitudePlot <- velMagnitudePlot + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") )
+velMagnitudePlot
+# overall velocity magnitude plot#
+velMagnitudePlot <- ggplot(globalDataframe )#
+velMagnitudePlot <- velMagnitudePlot + geom_point(mapping=aes(x=time, y=vel_mag, colour=expname)) #
+velMagnitudePlot <- velMagnitudePlot + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("Time (s)") ) +#
+	ylab(expression("Velocity Magnitude (mm/s)") )
+velMagnitudePlot
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+globalDataframe[1:3]
+globalDataframe[1:3, ]
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+velMagnitudePlot
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C085D03_RL/C085D03A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C085D03_RL/C085D03B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C085D03_RL/C085D03D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C104D06_RL/C104D06B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M07_RL/X168M07B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M07_RL/X168M07B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M03_RL/X168M03B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M07_RL/X163M07B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M04_RL/X163M04B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
