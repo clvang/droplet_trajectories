@@ -107,11 +107,11 @@ df.global <- cbind(df.global, doSize)
 
 
 # just a plot of all Methanol-Xenon dorplets for visual observation only
-do_low <- 3.1
-do_high <- 3.8
+do_low <- 0 #3.1
+do_high <- 6 #3.8
 metXenon_only <- ggplot(subset(df.global, 
 			Xe != 0 & fuel== "Methanol" & do > do_low & do <= do_high ) )
-metXenon_only <- metXenon_only + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
+metXenon_only <- metXenon_only + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=p)) 
 metXenon_only <- metXenon_only + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
 	legend.position=c(0.9, 0.75),
@@ -175,16 +175,26 @@ methXenon_cat2 <- c("X175M06",
 					"X163M02",
 					"X161M05",
 					"X163M03",
-					"X121M03",
+					"X121M03", 
 					"X144M01",
 					"X144M06",
-					"X175M04")
+					"X175M04",  #--original--#
+					"X161M03",
+					"X168M05",
+					"X168M06",
+					"X168M07",
+					"X175M01",
+					"X175M02",
+					"X175M03",
+					"X175M05")
+					# "X182M01")
 
 p_methXenon_cat2 <- ggplot(subset(df.global, expname== methXenon_cat2) )
-p_methXenon_cat2 <- p_methXenon_cat2 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
+p_methXenon_cat2 <- p_methXenon_cat2 + geom_point(mapping=aes(x=x_loc_fit, 
+	y=y_loc_fit, colour=p)) 
 p_methXenon_cat2 <- p_methXenon_cat2 + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
-	legend.position=c(0.9, 0.75),
+	legend.position=c(0.1, 0.75),
 	legend.title = element_blank(),
 	legend.text = element_text(size=6), 
 	axis.title.x = element_text(size=12),
@@ -200,6 +210,30 @@ size.w <- 10	    #specifies width of .pdf of plot in units specified by un
 size.h <- 6		#specifies height of .pdf of plot in units specified by un
 un <- "in"		#specifies unit of size.w and size.h
 ggsave(p_methXenon_cat2, file="methanolXenon_cat2.pdf", width=size.w, height=size.h, units=un)
+
+
+methXenon_cat2_velocity <- ggplot(subset(df.global, expname== methXenon_cat2) )
+methXenon_cat2_velocity <- methXenon_cat2_velocity + geom_point(mapping=aes(x=time, 
+	y=sqrt(x_vel_fit^2 + y_vel_fit^2), colour=do)) 
+methXenon_cat2_velocity <- methXenon_cat2_velocity + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	ylab(expression("Velocity Magnitude (mm/s)") ) +
+	xlab(expression("Time (s)") ) 	
+
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un
+size.h <- 6		#specifies height of .pdf of plot in units specified by un
+un <- "in"		#specifies unit of size.w and size.h
+ggsave(methXenon_cat2_velocity, file="methanolXenon_cat2_Velocities.pdf", width=size.w, height=size.h, units=un)
+
 
 
 methXenon_cat5 <- c("X163M07",
@@ -365,7 +399,7 @@ p1v5 <- p1v5 + 	theme_bw() +
 	xlab(expression("X (mm)") ) +
 	ylab(expression("Y (mm)") ) 	
 
-ggsave(p1v5, file="dropTraj_PropGly.pdf", width=size.w, height=size.h, units=un)
+ggsave(p1v5, file="dropTraj_PropGly_diffGroup.pdf", width=size.w, height=size.h, units=un)
 
 
 
