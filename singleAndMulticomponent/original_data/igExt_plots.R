@@ -117,7 +117,10 @@ for (i in 1:nrow(igExt_times) ){
 						currentExpData$tot_vel_fit, # mm/s 
 						currentExpData$d2_bw1,		# mm^2
 						sqrt(currentExpData$d2_bw1)*(currentExpData$tot_vel_fit)/current_nu, # Reynolds numbers
-						currentExpData$tot_acc_fit)  
+						currentExpData$tot_acc_fit,
+						currentExpData$x_loc_fit,
+						currentExpData$y_loc_fit,
+						currentExpData$do)  
 
 	# create array containing the velocities at extinction
 	velocity_ext_temp <- rep(currentExpData$tot_vel_fit[EXT_timeIndexMatchLocal],nrow(currentExpData))
@@ -149,7 +152,7 @@ for (i in 1:nrow(igExt_times) ){
 
 # set names in global data frame
 globalDataframe <- setNames(globalDataframe, c("expname","time","k_bw1","vel_mag",
-					"d2_bw1","reynolds","total_acc") )
+					"d2_bw1","reynolds","total_acc","x_loc_fit","y_loc_fit","do") )
 
 # create array of string to indicate data points prior to ignition,
 # during, and after extinction
@@ -361,8 +364,49 @@ ReynoldsNo <- ReynoldsNo +
 ggsave(ReynoldsNo, file="ReynoldsNumbers.pdf", width=size.w, height=size.h, units=un)
 
 # N <- nrow(subset(globalDataframe, timeIndicator=="after_extinction" ))
-# ReynoldsNo <- ReynoldsNo + geom_point(mapping=aes(y=vel_mag, colour=expname)) 
+# ReynoldsNo <- ReynoldsNo + geom_point(mapping=aes(y=vel_mag, colour=expname))
 
+# df.preignition <- subset(globalDataframe,timeIndicator=="pre_ignition") 
+xyPreIgnition_VelMagGroup <- ggplot( subset(globalDataframe, timeIndicator=="pre_ignition") )
+xyPreIgnition_VelMagGroup <- xyPreIgnition_VelMagGroup +
+		 geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=vel_mag)) +
+		ggtitle("XY Droplet Paths: Grouped by Velocity Magnitude") +
+		theme_bw() +
+		theme(plot.title = element_text(colour="black",face="bold",size=12),
+		legend.position=c(0.9, 0.75),
+		legend.title = element_blank(),
+		legend.text = element_text(size=6), 
+		axis.title.x = element_text(size=12),
+		axis.title.y = element_text(size=12),
+		legend.background = element_rect(fill="white"),
+		legend.key.height = unit(5,"mm"),
+		panel.background = element_rect(fill = "gray90"),
+		axis.text = element_text(size=12,colour="black") ) +
+		xlab(expression("x (mm)") ) +
+		ylab(expression("y (mm)") ) 
+ggsave(xyPreIgnition_VelMagGroup, file="xyPreIgnition_VelMagGroup.pdf", width=size.w, height=size.h, units=un)
+
+
+
+
+xyPreIgnition_doGroup <- ggplot( subset(globalDataframe, timeIndicator=="pre_ignition") )
+xyPreIgnition_doGroup <- xyPreIgnition_doGroup +
+		 geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=do)) +
+		ggtitle("XY Droplet Paths: Grouped by do") +
+		theme_bw() +
+		theme(plot.title = element_text(colour="black",face="bold",size=12),
+		legend.position=c(0.9, 0.75),
+		legend.title = element_blank(),
+		legend.text = element_text(size=6), 
+		axis.title.x = element_text(size=12),
+		axis.title.y = element_text(size=12),
+		legend.background = element_rect(fill="white"),
+		legend.key.height = unit(5,"mm"),
+		panel.background = element_rect(fill = "gray90"),
+		axis.text = element_text(size=12,colour="black") ) +
+		xlab(expression("x (mm)") ) +
+		ylab(expression("y (mm)") ) 
+ggsave(xyPreIgnition_doGroup, file="xyPreIgnition_doGroup.pdf", width=size.w, height=size.h, units=un)
 
 
 graphics.off()

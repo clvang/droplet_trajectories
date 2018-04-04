@@ -111,7 +111,8 @@ do_low <- 0 #3.1
 do_high <- 6 #3.8
 metXenon_only <- ggplot(subset(df.global, 
 			Xe != 0 & fuel== "Methanol" & do > do_low & do <= do_high ) )
-metXenon_only <- metXenon_only + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=p)) 
+metXenon_only <- metXenon_only + 
+	geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=Xe)) 
 metXenon_only <- metXenon_only + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
 	legend.position=c(0.9, 0.75),
@@ -232,7 +233,7 @@ methXenon_cat2_velocity <- methXenon_cat2_velocity + 	theme_bw() +
 size.w <- 10	    #specifies width of .pdf of plot in units specified by un
 size.h <- 6		#specifies height of .pdf of plot in units specified by un
 un <- "in"		#specifies unit of size.w and size.h
-ggsave(methXenon_cat2_velocity, file="methanolXenon_cat2_Velocities.pdf", width=size.w, height=size.h, units=un)
+ggsave(methXenon_cat2_velocity, file="methanolXenon_cat2_Velocities_doGroup.pdf", width=size.w, height=size.h, units=un)
 
 
 

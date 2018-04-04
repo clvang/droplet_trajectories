@@ -301,10 +301,18 @@ methXenon_cat2 <- c("X175M06",
 					"X163M02",
 					"X161M05",
 					"X163M03",
-					"X121M03",
+					"X121M03", 
 					"X144M01",
 					"X144M06",
-					"X175M04")
+					"X175M04",  #--original--#
+					"X161M03",
+					"X168M05",
+					"X168M06",
+					"X168M07",
+					"X175M01",
+					"X175M02",
+					"X175M03",
+					"X175M05")
 p7 <- ggplot(subset(dfglobal_SamsMams, expname1==methXenon_cat2) )
 p7 <- p7 + geom_point(mapping=aes(x=x_disp, y=y_disp, colour=dofactors1)) 
 p7 <- p7 + 	theme_bw() +
@@ -334,7 +342,7 @@ ggsave(p7, file="methanolXenon_cat2_SAMSMAMS.pdf", width=size.w, height=size.h, 
 # dev.new()
 # pdf("trajectories_pressures.pdf", width=11, height=9)		#save plot as pdf
 # finalplot <- multiplot(p5, p6, cols=1)
-dev.off()
+# dev.off()
 
 
 
