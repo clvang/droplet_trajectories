@@ -4,18 +4,27 @@
 
 library(ggplot2)		#this is needed to generate plots
 library(RColorBrewer)	#this is needed for the color package used in generating plots
+library(abind)
 
 rm(list=ls(all=TRUE))		#clear workspace of all variables
 currentDirectory <- getwd()
 setwd(currentDirectory)
 
+source("/Users/changvang/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dataFrameConstruct.R")
+
+
 ########## READ RELEVANT FILES/DATA AND ASK FOR USER INPUT ##########
 #read in names of all .csv files in current directory
 csvfilenames <- dir(pattern = "*_D2KROUT.csv")
 
+#read in key containing ignition and extinction times of experiments
+key_time_points <- read.csv(file = "/Users/changvang/mygitFiles/flex_experiment_information/ignitionExtinctionTimes.csv",
+			head=TRUE, sep=",",
+			stringsAsFactors=FALSE)
+
 #read experimental parameters for single component droplet experiments
 keyfilename <- dir(pattern="single_key.csv")
-key <- read.csv(file=keyfilename,head=TRUE,sep=",",
+key_exp_parameters <- read.csv(file=keyfilename,head=TRUE,sep=",",
 		stringsAsFactors=FALSE)
 
 
@@ -27,8 +36,11 @@ for (i in 1:length(csvfilenames)){
 	temp <- read.csv(file=csvfilenames[i],head=TRUE,sep=",",
 		stringsAsFactors=FALSE)	
 
-	#grab do for current experiment
-	keyRow <- which(key$expname == expname[1])
+	#grab do for current experiment from key_exp_parameters
+	keyRow <- which(key_exp_parameters$expname == expname)
+
+	#grab index for current experiment from key_time_points
+	keyRow_time_pts <- which(key_time_points$FLEX_ID == expname)
 
 
 	#extract only variables of interest
@@ -39,21 +51,21 @@ for (i in 1:length(csvfilenames)){
 	df.temp <- cbind(expname, df.temp )
 
 	#grab fueltype for current experiment
-	fuel <- key$fuel[keyRow]
+	fuel <- key_exp_parameters$fuel[keyRow]
 	fuel_type <- rep(fuel,nrow(temp))
 	df.temp <- cbind(df.temp, fuel_type)
 
-	#grad diffusivities for applicable experiments. This requires
+	#grab diffusivities for applicable experiments. This requires
 	#reading in the single_key file with data columns for 
 	#the diffusivities, D
-	Dvalue <- key$D[keyRow]	
+	Dvalue <- key_exp_parameters$D[keyRow]	
 	Dvalue_factor <- rep(Dvalue,nrow(temp))
 	df.temp <- cbind(df.temp, Dvalue_factor)
 
 	#grab xenon molefraction and chamber pressure for
 	#current experiment
-	xe_mf <- key$Xe[keyRow]
-	pressure <- key$p[keyRow]
+	xe_mf <- key_exp_parameters$Xe[keyRow]
+	pressure <- key_exp_parameters$p[keyRow]
 	xe <- rep( xe_mf,nrow(temp) )
 	pressure_chamber <- rep( pressure, nrow(temp) )
 	df.temp <- cbind(df.temp, xe, pressure_chamber)
@@ -61,22 +73,51 @@ for (i in 1:length(csvfilenames)){
 	#create another data frame to contain variables of interest
 	#for generating scatter plots
 
+	# calculate average burn rate and droplet acceleration during combustion and after extinction
+	if (length(keyRow_time_pts) != 0 ){
+		tmin <- key_time_points$T_IGNITION[keyRow_time_pts]
+		tmax <- key_time_points$T_EXTINCTION[keyRow_time_pts]		
+		if ( max(temp$time) > tmax ){
+			K_comb <- mean( subset(temp, time >= tmin & time <= tmax)$k_bw1 )
+			K_ext <- mean( subset(temp, time > tmax )$k_bw1 )
+			x_acc_comb <- mean( subset(temp, time >= tmin & time <= tmax)$x_acc_fit )
+			y_acc_comb <- mean( subset(temp, time >= tmin & time <= tmax)$y_acc_fit )	
+			total_acc_comb <- sqrt( x_acc_comb^2 + y_acc_comb^2 )
+
+			x_acc_ext <- mean( subset(temp, time > tmax )$x_acc_fit )
+			y_acc_ext <- mean( subset(temp, time > tmax )$y_acc_fit )		
+			total_acc_ext <- sqrt( x_acc_ext^2 + y_acc_ext^2 )				
+		}
+	}else{
+		K_comb <- NA 
+		K_ext <- NA
+		x_acc_comb <- NA
+		y_acc_comb <- NA 
+		total_acc_comb <- NA
+
+		x_acc_ext <- NA 
+		y_acc_ext <- NA 
+		total_acc_ext <- NA
+	}
+
+
 	#calculate initial droplet velocity
 	range_index <- seq(1,30)
 	Vo <- mean(sqrt(temp$x_vel_fit[range_index]^2 + temp$y_vel_fit[range_index]^2) )
 
 	#calculate Vo_ofc the average velocity from needle retraction
 	#to t_ofc the time at which the onset of flame contraction occurs
-	if( key$tofc[keyRow] == 0 ){
+	if( key_exp_parameters$tofc[keyRow] == 0 ){
 		Vo_ofc <- 0
 	}else{
-		temp_partial <- subset(temp, (time>=0) & (time<=key$tofc[keyRow]) )
+		temp_partial <- subset(temp, (time>=0) & (time<=key_exp_parameters$tofc[keyRow]) )
 		Vo_ofc <- mean( sqrt(temp_partial$x_vel_fit^2 + temp_partial$y_vel_fit^2) )
 	}
 
 
 	df.scatter <- data.frame(expname[1],
-							temp$do[1], Vo, fuel, Vo_ofc, Dvalue)
+							temp$do[1], Vo, fuel, Vo_ofc, Dvalue,
+							K_comb, K_ext, total_acc_comb, total_acc_ext)
 
 
 	if ( i == 1){
@@ -92,7 +133,9 @@ df.global <- setNames(df.global, c("expname","time","do",
 									"x_loc_fit","x_vel_fit",
 									"y_loc_fit","y_vel_fit",
 									"fuel","D","Xe","p") )
-dfscatter.global <- setNames(dfscatter.global,c("expname","do","Vo","fuel","Vofc","D"))
+dfscatter.global <- setNames(dfscatter.global,c("expname","do","Vo",
+									"fuel","Vofc","D",
+									"K_comb","K_ext","total_acc_comb","total_acc_ext"))
 
 # create vector grouping do sizes and add to df.global
 doSize <- as.character(nrow(df.global))
@@ -107,12 +150,12 @@ df.global <- cbind(df.global, doSize)
 
 
 # just a plot of all Methanol-Xenon dorplets for visual observation only
-do_low <- 0 #3.1
-do_high <- 6 #3.8
-metXenon_only <- ggplot(subset(df.global, 
-			Xe != 0 & fuel== "Methanol" & do > do_low & do <= do_high ) )
+do_low <- 0.0 #3.1
+do_high <- 6.5 #3.8
+metXenon_only <- ggplot(subset(df.global, Xe == 0 &
+			fuel== "Heptane" & do > do_low & do <= do_high ) )
 metXenon_only <- metXenon_only + 
-	geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=Xe)) 
+	geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
 metXenon_only <- metXenon_only + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
 	legend.position=c(0.9, 0.75),
@@ -130,7 +173,7 @@ metXenon_only <- metXenon_only + 	theme_bw() +
 size.w <- 10	    #specifies width of .pdf of plot in units specified by un
 size.h <- 6		#specifies height of .pdf of plot in units specified by un
 un <- "in"		#specifies unit of size.w and size.h
-ggsave(metXenon_only, file="methanolXenon_Only.pdf", width=size.w, height=size.h, units=un)
+ggsave(metXenon_only, file="Heptane_Only.pdf", width=size.w, height=size.h, units=un)
 
 # list of methanol-xenon experiments with similar trajectories (category 1) to
 # that of X182M01 (an evaporating droplet)
@@ -143,11 +186,21 @@ methXenon_cat1 <- c("X182M01",
 					"X119M06",
 					"X119M04",
 					"X136M03")
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, 
+				   				key=key_time_points, 
+				   				expInterestNames=methXenon_cat1)
+globalDataframe <- dataTable$globalDataframe
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal
 
-
-p_methXenon_cat1 <- ggplot(subset(df.global, expname== methXenon_cat1) )
+# p_methXenon_cat1 <- ggplot(subset(df.global, expname== methXenon_cat1) )
+p_methXenon_cat1 <- ggplot(subset(df.global, df.global$expname %in% methXenon_cat1) )
 p_methXenon_cat1 <- p_methXenon_cat1 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
 p_methXenon_cat1 <- p_methXenon_cat1 + 	theme_bw() +
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),
+	 shape=17,
+	 colour="black", size=3) + 
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
 	legend.position=c(0.9, 0.75),
 	legend.title = element_blank(),
@@ -167,8 +220,7 @@ un <- "in"		#specifies unit of size.w and size.h
 ggsave(p_methXenon_cat1, file="methanolXenon_cat1.pdf", width=size.w, height=size.h, units=un)
 
 
-# list of methanol-xenon experiments with similar trajectories (category 1) to
-# that of X182M01 (an evaporating droplet)
+# list of methanol-xenon experiments with similar trajectories (category 2) 
 methXenon_cat2 <- c("X175M06",
 					"X163M04",
 					"X168M07",
@@ -183,20 +235,31 @@ methXenon_cat2 <- c("X175M06",
 					"X161M03",
 					"X168M05",
 					"X168M06",
-					"X168M07",
 					"X175M01",
 					"X175M02",
 					"X175M03",
 					"X175M05")
 					# "X182M01")
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, 
+				   				key=key_time_points, 
+				   				expInterestNames=methXenon_cat2)
+globalDataframe <- dataTable$globalDataframe
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal
 
-p_methXenon_cat2 <- ggplot(subset(df.global, expname== methXenon_cat2) )
+# colour=sqrt(x_vel_fit^2+y_vel_fit^2)
+# p_methXenon_cat2 <- ggplot(subset(df.global, expname== methXenon_cat2) )
+p_methXenon_cat2 <- ggplot(subset(df.global, df.global$expname %in% methXenon_cat2) )
 p_methXenon_cat2 <- p_methXenon_cat2 + geom_point(mapping=aes(x=x_loc_fit, 
-	y=y_loc_fit, colour=p)) 
+	y=y_loc_fit, colour=sqrt(x_vel_fit^2+y_vel_fit^2) )) +
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),
+	 shape=17,
+	 colour="black", size=3)	
 p_methXenon_cat2 <- p_methXenon_cat2 + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
 	legend.position=c(0.1, 0.75),
-	legend.title = element_blank(),
+	# legend.title = element_blank(),
 	legend.text = element_text(size=6), 
 	axis.title.x = element_text(size=12),
 	axis.title.y = element_text(size=12),
@@ -208,12 +271,13 @@ p_methXenon_cat2 <- p_methXenon_cat2 + 	theme_bw() +
 	ylab(expression("Y (mm)") ) 	
 
 size.w <- 10	    #specifies width of .pdf of plot in units specified by un
-size.h <- 6		#specifies height of .pdf of plot in units specified by un
-un <- "in"		#specifies unit of size.w and size.h
+size.h <- 6			#specifies height of .pdf of plot in units specified by un
+un <- "in"			#specifies unit of size.w and size.h
 ggsave(p_methXenon_cat2, file="methanolXenon_cat2.pdf", width=size.w, height=size.h, units=un)
 
 
-methXenon_cat2_velocity <- ggplot(subset(df.global, expname== methXenon_cat2) )
+# methXenon_cat2_velocity <- ggplot(subset(df.global, expname== methXenon_cat2) )
+methXenon_cat2_velocity <- ggplot(subset(df.global, df.global$expname %in% methXenon_cat2) )
 methXenon_cat2_velocity <- methXenon_cat2_velocity + geom_point(mapping=aes(x=time, 
 	y=sqrt(x_vel_fit^2 + y_vel_fit^2), colour=do)) 
 methXenon_cat2_velocity <- methXenon_cat2_velocity + 	theme_bw() +
@@ -241,7 +305,8 @@ methXenon_cat5 <- c("X163M07",
 					"X163M01",
 					"X119M04",
 					"X121M01")
-p_methXenon_cat5 <- ggplot(subset(df.global, expname== methXenon_cat5) )
+# p_methXenon_cat5 <- ggplot(subset(df.global, expname== methXenon_cat5) )
+p_methXenon_cat5 <- ggplot(subset(df.global, df.global$expname %in% methXenon_cat5) )
 p_methXenon_cat5 <- p_methXenon_cat5 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) 
 p_methXenon_cat5 <- p_methXenon_cat5 + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
@@ -473,6 +538,302 @@ p3 <- p3 + 	theme_bw() +
 	ylab(expression("V"[o]*" (mm/s)") ) 	
 
 ggsave(p3, file="DvsVofc_propGly.pdf", width=size.w, height=size.h, units=un)
+
+
+
+
+heptaneXenon_cat1 <- c("X177H12",
+					   "X177H06",
+					   "X177H07",
+					   "X100H07",
+					   "X177H04",
+					   "X126H07",
+					   "X129H02",
+					   "X140H05",
+					   "X100H01",
+					   "X126H01",
+					   "X126H02",
+					   "X126H06",
+					   "X161H01",
+					   "X170H03")
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, 
+				   				key=key_time_points, 
+				   				expInterestNames=heptaneXenon_cat1)
+globalDataframe <- dataTable$globalDataframe
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal
+
+# plot x-y trajectory for heptane/xenon droplets
+p_heptaneXenon_cat1 <- ggplot(subset(df.global, df.global$expname %in% heptaneXenon_cat1) )
+p_heptaneXenon_cat1 <- p_heptaneXenon_cat1 + geom_point(mapping=aes(x=x_loc_fit, 
+	y=y_loc_fit, colour=expname) ) +
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),
+	 shape=17,
+	 colour="black", size=3) 
+p_heptaneXenon_cat1 <- p_heptaneXenon_cat1 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.8, 0.2),
+	# legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un
+size.h <- 6		#specifies height of .pdf of plot in units specified by un
+un <- "in"		#specifies unit of size.w and size.h
+ggsave(p_heptaneXenon_cat1, file="heptaneXenon_cat1.pdf", width=size.w, height=size.h, units=un)
+
+
+heptaneNonXenon_cat1 <- c("H05H103",
+						  "H19H201",
+						  "H03H201",
+						  "H03H202")
+
+heptane_cat2 <- c("H04H201",
+				  "H11H101",
+				  "H19H101",
+				  "H10H101")
+
+heptane_cat3 <- c("H04H101",
+				  "H03H101",
+				  "H12H101")
+
+
+propGly_cat4 <- c("C080D05",
+				  "C085D03",
+				  "C104D05",
+				  "C077D02",
+				  "C080D01",
+				  "C101D05",
+				  "C104D06",
+				  "C077D06",
+				  "C101D06",
+				  "C077D04")
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, 
+				   				key=key_time_points, 
+				   				expInterestNames=propGly_cat4)
+globalDataframe <- dataTable$globalDataframe
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal
+
+# plot x-y trajectory for all prop/gly drplets with paths color coded
+# for local velocity magnitude
+p_propGly_cat4 <- ggplot(subset(df.global, df.global$expname %in% propGly_cat4) )
+p_propGly_cat4 <- p_propGly_cat4 + geom_point(mapping=aes(x=x_loc_fit, 
+	y=y_loc_fit, colour=sqrt(x_vel_fit^2+y_vel_fit^2)) ) +
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),
+	 shape=17,
+	 colour="black", size=3) 
+p_propGly_cat4 <- p_propGly_cat4 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.1, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un
+size.h <- 6		#specifies height of .pdf of plot in units specified by un
+un <- "in"		#specifies unit of size.w and size.h
+ggsave(p_propGly_cat4, file="propgly_cat4.pdf", width=size.w, height=size.h, units=un)
+
+
+# propanol/glycerol droplet names for experiments with category 2 paths
+propGly_cat2 <- c("C077D03",
+	 			  "C101D02")
+
+# propanol/glycerol droplet names for experiments with category 3 paths
+propGly_cat3 <- c("C108D03")
+
+propGly_all <- subset(df.global, fuel == "Pro95/Gly5")
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, 
+				   				key=key_time_points, 
+				   				expInterestNames=unique(propGly_all$expname))
+globalDataframe <- dataTable$globalDataframe
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal
+FC_timeIndexMatchGlobal <- dataTable$FC_timeIndexMatchGlobal
+
+# plot x-y trajectory for all propanol/glycerol droplets
+p_propGly_all <- ggplot(subset(df.global, df.global$expname %in% unique(propGly_all$expname) ) )
+p_propGly_all <- p_propGly_all + geom_point(mapping=aes(x=x_loc_fit, 
+	y=y_loc_fit, colour=expname ) ) +
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),
+	 shape=17,
+	 colour="black", size=3) 
+p_propGly_all <- p_propGly_all + theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.1, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un
+size.h <- 6			#specifies height of .pdf of plot in units specified by un
+un <- "in"			#specifies unit of size.w and size.h
+ggsave(p_propGly_all, file="propgly_XYtraj.pdf", width=size.w, height=size.h, units=un)
+
+
+
+# generate plots for propanol/glycerol droplets with curved paths.
+# generate x-y paths, with markers for onset of flame contraction times
+propGly_interest <- c("C108D02",
+				  "C108D03",
+				  "C101D02",
+				  "C085D03",
+				  "C104D05",
+				  "C101D06")
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, 
+				   				key=key_time_points, 
+				   				expInterestNames=propGly_interest)
+globalDataframe <- dataTable$globalDataframe
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal
+FC_timeIndexMatchGlobal <- dataTable$FC_timeIndexMatchGlobal
+
+p_propGly_all2 <- ggplot(subset(df.global, df.global$expname %in% propGly_interest ))
+p_propGly_all2 <- p_propGly_all2 + geom_point(mapping=aes(x=x_loc_fit, 
+	y=y_loc_fit, colour=expname ) ) +
+	geom_point(data=globalDataframe[FC_timeIndexMatchGlobal, ],
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),
+	 shape=17,
+	 colour="black", size=3) 
+p_propGly_all2 <- p_propGly_all2 + theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.1, 0.65),
+	legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	xlab(expression("X (mm)") ) +
+	ylab(expression("Y (mm)") ) 	
+
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un
+size.h <- 6		#specifies height of .pdf of plot in units specified by un
+un <- "in"		#specifies unit of size.w and size.h
+ggsave(p_propGly_all2, file="propgly_XYtraj_FCtimes.pdf", width=size.w, height=size.h, units=un)
+
+
+# plot acceleration and burning rate time series for propaynol/glycerol droplets
+p_propGly_all3 <- ggplot(data = globalDataframe, aes(x=time))
+p_propGly_all3 <- p_propGly_all3 + 
+	geom_point( aes(y=sqrt(x_acc_fit^2 + y_acc_fit^2), colour=expname))
+p_propGly_all3 <- p_propGly_all3 + geom_point(mapping=aes(y=k_bw1*4, colour=expname))
+p_propGly_all3 <- p_propGly_all3 +
+	scale_y_continuous(sec.axis = sec_axis(~.*5, name=expression("K (mm"^2*"/s)") ) )
+p_propGly_all3 <- p_propGly_all3 + theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.1, 0.65),
+	legend.title = element_blank(),
+	legend.text = element_text(size=6), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	xlab(expression("Time (s)") ) +
+	ylab(expression("Acceleration (mm/s"^2*")") ) 	
+ggsave(p_propGly_all3, file="propGly_xyAccBurnRate.pdf", width=size.w, height=size.h, units=un)
+
+
+# plot average K vs average Acc for all droplets where applicable
+ptsize <- 4.0
+p_kvAc <- ggplot( subset(dfscatter.global, K_comb != "NA") )
+p_kvAc <- p_kvAc + aes(x=total_acc_comb, y=K_comb)
+p_kvAc <- p_kvAc + aes(colour=fuel, shape=fuel) 
+p_kvAc <- p_kvAc + geom_point(size=ptsize) +
+			scale_colour_manual(
+				values=c(
+					"#e41a1c",  #red (set1)
+					"#984ea3",  #purple (set1)
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)
+					"#4daf4a",  #green (set1)
+					"#e7298a",  #pink (dark2)
+					"#d95f02",  #brown (dark2)
+					"#377eb8",  #blue (set1)
+					"#66c2a5"))  #army grn (dark2)
+p_kvAc <- p_kvAc + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=12), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	# guides(colour=guide_legend(ncol=5)) +
+	# guides(linetype=guide_legend(ncol=5))	+
+	xlab(expression("Acceleration (mm/s"^2*")") ) +
+	ylab(expression( bar(K)["burn"]*" (mm"^2*"/s)") ) 	
+
+ggsave(p_kvAc, file="KvsAcc_allexp.pdf", width=size.w, height=size.h, units=un)
+
+
+# create scatter plot of average K vs average Acc during combusiton and after extinction
+KaccBurn_data <- data.frame(dfscatter.global$expname,
+							dfscatter.global$K_comb,
+							dfscatter.global$total_acc_comb,
+							dfscatter.global$fuel)
+KaccBurn_data <- setNames(KaccBurn_data, c("expname","K_comb","total_acc_comb","fuel"))
+KaccBurn_data <- subset(KaccBurn_data,K_comb != "NA")
+
+KaccExt_data <- data.frame(dfscatter.global$expname,
+							dfscatter.global$K_ext,
+							dfscatter.global$total_acc_ext,
+							dfscatter.global$fuel)							
+KaccExt_data <- setNames(KaccExt_data, c("expname","K_ext","total_acc_ext","fuel"))
+KaccExt_data <- subset(KaccExt_data,K_ext != "NA")
+
+
+KavgAavg <- ggplot() +
+geom_point(data = subset(KaccBurn_data,fuel != "Heptane"), aes(x=K_comb,y=total_acc_comb, colour=fuel), shape=16, size=4.0) + 
+geom_point(data = subset(KaccExt_data,fuel != "Heptane"), aes(x=K_ext,y=total_acc_ext, colour=fuel), shape=17, size=4.0) + 
+theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.9, 0.75),
+	legend.title = element_blank(),
+	legend.text = element_text(size=12), 
+	axis.title.x = element_text(size=12),
+	axis.title.y = element_text(size=12),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(5,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=12,colour="black") ) +
+	# guides(colour=guide_legend(ncol=5)) +
+	# guides(linetype=guide_legend(ncol=5))	+
+	ylab(expression("Acceleration (mm/s"^2*")") ) +
+	xlab(expression( bar(K)*" (mm"^2*"/s)") ) 
+ggsave(p_kvAc, file="KvsAcc_FuelGrouped.pdf", width=size.w, height=size.h, units=un)
+
 
 
 
