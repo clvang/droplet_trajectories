@@ -2,11 +2,13 @@
 # from droplet centroid location data ONLY.
 # place all _d2KROUT.csv files in the same folder as this script!
 
+rm(list=ls(all=TRUE))		#clear workspace of all variables
+
 library(ggplot2)		#this is needed to generate plots
 library(RColorBrewer)	#this is needed for the color package used in generating plots
 library(abind)
+library(reshape)
 
-rm(list=ls(all=TRUE))		#clear workspace of all variables
 currentDirectory <- getwd()
 setwd(currentDirectory)
 
@@ -27,6 +29,23 @@ keyfilename <- dir(pattern="single_key.csv")
 key_exp_parameters <- read.csv(file=keyfilename,head=TRUE,sep=",",
 		stringsAsFactors=FALSE)
 
+# index <- as.numeric(nrow(key_time_points))
+# for(j in 1:nrow(key_time_points)){
+# 	index[j] <- which(key_time_points$FLEX_ID[j]==key_exp_parameters$expname)
+# }
+# T_ig <- rep(0,nrow(key_exp_parameters))
+# T_ig[index] <- key_time_points$T_IGNITION
+
+# igextTimes <- cbind(key_exp_parameters,T_ig)
+
+# index2 <- rep(0,nrow(key_exp_parameters))
+# for (j in 1:nrow(dfscatter.global)){
+# 	index <- which(dfscatter.global$expname[j] == key_exp_parameters$expname)
+# 	if( key_exp_parameters$T_IGNITION[index] == 0 ){
+# 		index2[index] <- 1
+# 	}
+# }
+# write.csv(index2,"test.csv")
 
 # read each csv file and save variables of interest
 for (i in 1:length(csvfilenames)){
@@ -41,7 +60,7 @@ for (i in 1:length(csvfilenames)){
 
 	#grab index for current experiment from key_time_points
 	keyRow_time_pts <- which(key_time_points$FLEX_ID == expname)
-
+	# print(keyRow_time_pts)
 
 	#extract only variables of interest
 	df.temp <- data.frame(temp$time, temp$do, temp$x_loc_fit,
@@ -73,10 +92,18 @@ for (i in 1:length(csvfilenames)){
 	#create another data frame to contain variables of interest
 	#for generating scatter plots
 
+	tmin <- key_time_points$T_IGNITION[keyRow_time_pts]
+	tmax <- key_time_points$T_EXTINCTION[keyRow_time_pts]
+	
+	# check if tmax is empty
+	if ( length(tmax) == 0){
+		tmax <- NA
+	}
 	# calculate average burn rate and droplet acceleration during combustion and after extinction
-	if (length(keyRow_time_pts) != 0 ){
-		tmin <- key_time_points$T_IGNITION[keyRow_time_pts]
-		tmax <- key_time_points$T_EXTINCTION[keyRow_time_pts]		
+	# if (length(keyRow_time_pts) != 0 ){
+		# tmin <- key_time_points$T_IGNITION[keyRow_time_pts]
+		# tmax <- key_time_points$T_EXTINCTION[keyRow_time_pts]	
+	if ( (length(keyRow_time_pts) != 0) & (is.na(tmax) != 1) ){
 		if ( max(temp$time) > tmax ){
 			K_comb <- mean( subset(temp, time >= tmin & time <= tmax)$k_bw1 )
 			K_ext <- mean( subset(temp, time > tmax )$k_bw1 )
@@ -87,7 +114,7 @@ for (i in 1:length(csvfilenames)){
 			x_acc_ext <- mean( subset(temp, time > tmax )$x_acc_fit )
 			y_acc_ext <- mean( subset(temp, time > tmax )$y_acc_fit )		
 			total_acc_ext <- sqrt( x_acc_ext^2 + y_acc_ext^2 )				
-		}
+		} # if max(temp$time)
 	}else{
 		K_comb <- NA 
 		K_ext <- NA
@@ -102,7 +129,8 @@ for (i in 1:length(csvfilenames)){
 
 
 	#calculate initial droplet velocity
-	range_index <- seq(1,30)
+	frameVo <- 12 # the first 0.4 seconds
+	range_index <- seq(1,frameVo)
 	Vo <- mean(sqrt(temp$x_vel_fit[range_index]^2 + temp$y_vel_fit[range_index]^2) )
 
 	#calculate Vo_ofc the average velocity from needle retraction
@@ -110,14 +138,21 @@ for (i in 1:length(csvfilenames)){
 	if( key_exp_parameters$tofc[keyRow] == 0 ){
 		Vo_ofc <- 0
 	}else{
-		temp_partial <- subset(temp, (time>=0) & (time<=key_exp_parameters$tofc[keyRow]) )
+		temp_partial <- subset(temp, (time>=key_exp_parameters$tofc[keyRow]-0.4) & (time<=key_exp_parameters$tofc[keyRow]) )
 		Vo_ofc <- mean( sqrt(temp_partial$x_vel_fit^2 + temp_partial$y_vel_fit^2) )
+	}
+
+	if( key_exp_parameters$T_IGNITION[keyRow] == 0){
+		V_ig <- 0	
+	}else{
+		temp_partial <- subset(temp, (time>=key_exp_parameters$T_IGNITION[keyRow]-0.4 ) & (time<=key_exp_parameters$T_IGNITION[keyRow])  )
+		V_ig <- mean( sqrt(temp_partial$x_vel_fit^2 + temp_partial$y_vel_fit^2) )
 	}
 
 
 	df.scatter <- data.frame(expname[1],
 							temp$do[1], Vo, fuel, Vo_ofc, Dvalue,
-							K_comb, K_ext, total_acc_comb, total_acc_ext)
+							K_comb, K_ext, total_acc_comb, total_acc_ext, V_ig)
 
 
 	if ( i == 1){
@@ -135,7 +170,7 @@ df.global <- setNames(df.global, c("expname","time","do",
 									"fuel","D","Xe","p") )
 dfscatter.global <- setNames(dfscatter.global,c("expname","do","Vo",
 									"fuel","Vofc","D",
-									"K_comb","K_ext","total_acc_comb","total_acc_ext"))
+									"K_comb","K_ext","total_acc_comb","total_acc_ext","Vig"))
 
 # create vector grouping do sizes and add to df.global
 doSize <- as.character(nrow(df.global))
@@ -468,13 +503,18 @@ p1v5 <- p1v5 + 	theme_bw() +
 ggsave(p1v5, file="dropTraj_PropGly_diffGroup.pdf", width=size.w, height=size.h, units=un)
 
 
+size.w2 <- 3.25	    #specifies width of .pdf of plot in units specified by un
+size.h2 <- 2.8		#specifies height of .pdf of plot in units specified by un
+ptsize2 <- 1.5
+txtsize2 <- 12
+titlsize2 <- 7
 
 ptsize <- 4.0
 p2 <- ggplot(dfscatter.global)
 p2 <- p2 + aes(x=do, y=Vo)
 # p2 <- p2 + geom_point(mapping=aes(x=do, y=Vo, shape=fuel, colour=fuel, size=1.2))
 p2 <- p2 + aes(colour=fuel, shape=fuel) 
-p2 <- p2 + geom_point(size=ptsize) +
+p2 <- p2 + geom_point(size=ptsize2) +
 			scale_colour_manual(
 				values=c(
 					"#e41a1c",  #red (set1)
@@ -487,23 +527,99 @@ p2 <- p2 + geom_point(size=ptsize) +
 					"#66c2a5"))  #army grn (dark2)
 p2 <- p2 + 	theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
-	legend.position=c(0.9, 0.75),
+	legend.position=c(0.8, 0.87),
 	legend.title = element_blank(),
-	legend.text = element_text(size=12), 
-	axis.title.x = element_text(size=12),
-	axis.title.y = element_text(size=12),
+	legend.text = element_text(size=9), 
+	axis.title.x = element_text(size=txtsize2),
+	axis.title.y = element_text(size=txtsize2),
 	legend.background = element_rect(fill="white"),
-	legend.key.height = unit(5,"mm"),
+	legend.key.height = unit(2.5,"mm"),
+	legend.key.width = unit(3,"mm"),
 	panel.background = element_rect(fill = "gray90"),
-	axis.text = element_text(size=12,colour="black") ) +
+	axis.text = element_text(size=txtsize2,colour="black") ) +
 	# guides(colour=guide_legend(ncol=5)) +
 	# guides(linetype=guide_legend(ncol=5))	+
 	xlab(expression("D"[o]*" (mm)") ) +
 	ylab(expression("V"[o]*" (mm/s)") ) 	
 
-ggsave(p2, file="dovsVo_all_droplets.pdf", width=size.w, height=size.h, units=un)
+# ggsave(p2, file="dovsVo_all_droplets.pdf", width=size.w, height=size.h, units=un)
+ggsave(p2, file="dovsVo_all_droplets.pdf", width=size.w2, height=size.h2, units=un)
 
 
+
+p2 <- ggplot(dfscatter.global)
+p2 <- p2 + aes(x=do, y=( (Vig-Vo)/Vo ) )
+# p2 <- p2 + geom_point(mapping=aes(x=do, y=Vo, shape=fuel, colour=fuel, size=1.2))
+p2 <- p2 + aes(colour=fuel, shape=fuel) 
+p2 <- p2 + geom_point(size=ptsize2) +
+			scale_colour_manual(
+				values=c(
+					"#e41a1c",  #red (set1)
+					"#984ea3",  #purple (set1)
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)
+					"#4daf4a",  #green (set1)
+					"#e7298a",  #pink (dark2)
+					"#d95f02",  #brown (dark2)
+					"#377eb8",  #blue (set1)
+					"#66c2a5"))  #army grn (dark2)
+p2 <- p2 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.8, 0.87),
+	legend.title = element_blank(),
+	legend.text = element_text(size=9), 
+	axis.title.x = element_text(size=txtsize2),
+	axis.title.y = element_text(size=txtsize2),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(2.5,"mm"),
+	legend.key.width = unit(3,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=txtsize2,colour="black") ) +
+	# guides(colour=guide_legend(ncol=5)) +
+	# guides(linetype=guide_legend(ncol=5))	+
+	xlab(expression("D"[o]*" (mm)") ) +
+	ylab(expression( "(V"[ig]*"-V"[o]*")/V"[o]) ) 	
+
+# ggsave(p2, file="dovsVo_all_droplets.pdf", width=size.w, height=size.h, units=un)
+ggsave(p2, file="VigVovsDo_all_droplets.pdf", width=size.w2, height=size.h2, units=un)
+
+
+
+
+
+p2 <- ggplot(dfscatter.global)
+p2 <- p2 + aes(x=do, y= (Vig-Vo) )
+# p2 <- p2 + geom_point(mapping=aes(x=do, y=Vo, shape=fuel, colour=fuel, size=1.2))
+p2 <- p2 + aes(colour=fuel, shape=fuel) 
+p2 <- p2 + geom_point(size=ptsize2) +
+			scale_colour_manual(
+				values=c(
+					"#e41a1c",  #red (set1)
+					"#984ea3",  #purple (set1)
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)
+					"#4daf4a",  #green (set1)
+					"#e7298a",  #pink (dark2)
+					"#d95f02",  #brown (dark2)
+					"#377eb8",  #blue (set1)
+					"#66c2a5"))  #army grn (dark2)
+p2 <- p2 + 	theme_bw() +
+	theme(plot.title = element_text(colour="black",face="bold",size=6),
+	legend.position=c(0.8, 0.3),
+	legend.title = element_blank(),
+	legend.text = element_text(size=9), 
+	axis.title.x = element_text(size=txtsize2),
+	axis.title.y = element_text(size=txtsize2),
+	legend.background = element_rect(fill="white"),
+	legend.key.height = unit(2.5,"mm"),
+	legend.key.width = unit(3,"mm"),
+	panel.background = element_rect(fill = "gray90"),
+	axis.text = element_text(size=txtsize2,colour="black") ) +
+	# guides(colour=guide_legend(ncol=5)) +
+	# guides(linetype=guide_legend(ncol=5))	+
+	xlab(expression("D"[o]*" (mm)") ) +
+	ylab(expression( "V"[ig]*"-V"[o]) ) 	
+
+# ggsave(p2, file="dovsVo_all_droplets.pdf", width=size.w, height=size.h, units=un)
+ggsave(p2, file="VigvsDo_all_droplets.pdf", width=size.w2, height=size.h2, units=un)
 
 ptsize <- 4.0
 p3 <- ggplot( subset(dfscatter.global, Vofc > 0 ) )
@@ -765,8 +881,8 @@ ggsave(p_propGly_all3, file="propGly_xyAccBurnRate.pdf", width=size.w, height=si
 
 # plot average K vs average Acc for all droplets where applicable
 ptsize <- 4.0
-p_kvAc <- ggplot( subset(dfscatter.global, K_comb != "NA") )
-p_kvAc <- p_kvAc + aes(x=total_acc_comb, y=K_comb)
+p_kvAc <- ggplot( subset(dfscatter.global, K_comb != "NA" & fuel != "Heptane") )
+p_kvAc <- p_kvAc + aes(y=total_acc_comb, x=K_comb)
 p_kvAc <- p_kvAc + aes(colour=fuel, shape=fuel) 
 p_kvAc <- p_kvAc + geom_point(size=ptsize) +
 			scale_colour_manual(
@@ -792,10 +908,10 @@ p_kvAc <- p_kvAc + 	theme_bw() +
 	axis.text = element_text(size=12,colour="black") ) +
 	# guides(colour=guide_legend(ncol=5)) +
 	# guides(linetype=guide_legend(ncol=5))	+
-	xlab(expression("Acceleration (mm/s"^2*")") ) +
-	ylab(expression( bar(K)["burn"]*" (mm"^2*"/s)") ) 	
+	ylab(expression("Acceleration (mm/s"^2*")") ) +
+	xlab(expression( bar(K)["burn"]*" (mm"^2*"/s)") ) 	
 
-ggsave(p_kvAc, file="KvsAcc_allexp.pdf", width=size.w, height=size.h, units=un)
+ggsave(p_kvAc, file="KburnvsAcc_allexp.pdf", width=size.w, height=size.h, units=un)
 
 
 # create scatter plot of average K vs average Acc during combusiton and after extinction
@@ -803,23 +919,39 @@ KaccBurn_data <- data.frame(dfscatter.global$expname,
 							dfscatter.global$K_comb,
 							dfscatter.global$total_acc_comb,
 							dfscatter.global$fuel)
-KaccBurn_data <- setNames(KaccBurn_data, c("expname","K_comb","total_acc_comb","fuel"))
+KaccBurn_data <- setNames(KaccBurn_data, c("expname","K_comb","total_acc","fuel"))
 KaccBurn_data <- subset(KaccBurn_data,K_comb != "NA")
+KaccBurn_data <- melt(KaccBurn_data, id=c("expname","fuel", "total_acc"))
 
 KaccExt_data <- data.frame(dfscatter.global$expname,
 							dfscatter.global$K_ext,
 							dfscatter.global$total_acc_ext,
 							dfscatter.global$fuel)							
-KaccExt_data <- setNames(KaccExt_data, c("expname","K_ext","total_acc_ext","fuel"))
+KaccExt_data <- setNames(KaccExt_data, c("expname","K_ext","total_acc","fuel"))
 KaccExt_data <- subset(KaccExt_data,K_ext != "NA")
+KaccExt_data <- melt(KaccExt_data, id=c("expname","fuel","total_acc"))
+
+KaccCombined_data <- rbind(KaccBurn_data, KaccExt_data)
+
 
 
 KavgAavg <- ggplot() +
-geom_point(data = subset(KaccBurn_data,fuel != "Heptane"), aes(x=K_comb,y=total_acc_comb, colour=fuel), shape=16, size=4.0) + 
-geom_point(data = subset(KaccExt_data,fuel != "Heptane"), aes(x=K_ext,y=total_acc_ext, colour=fuel), shape=17, size=4.0) + 
+# geom_point(data = KaccBurn_data, aes(x=K_comb,y=total_acc_comb, shape=fuel, colour=fuel), size=4.0) + 
+geom_point(data = subset(KaccCombined_data,fuel != "Heptane"), aes(x=value,y=total_acc, shape=variable), size=4.0) +
+			aes(colour=fuel) + 
+			scale_colour_manual(
+				values=c(
+					"#e41a1c",  #red (set1)
+					"#984ea3",  #purple (set1)
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)
+					"#4daf4a",  #green (set1)
+					"#e7298a",  #pink (dark2)
+					"#d95f02",  #brown (dark2)
+					"#377eb8",  #blue (set1)
+					"#66c2a5")) +  #army grn (dark2)
 theme_bw() +
 	theme(plot.title = element_text(colour="black",face="bold",size=6),
-	legend.position=c(0.9, 0.75),
+	legend.position=c(0.8, 0.80),
 	legend.title = element_blank(),
 	legend.text = element_text(size=12), 
 	axis.title.x = element_text(size=12),
@@ -832,7 +964,7 @@ theme_bw() +
 	# guides(linetype=guide_legend(ncol=5))	+
 	ylab(expression("Acceleration (mm/s"^2*")") ) +
 	xlab(expression( bar(K)*" (mm"^2*"/s)") ) 
-ggsave(p_kvAc, file="KvsAcc_FuelGrouped.pdf", width=size.w, height=size.h, units=un)
+ggsave(KavgAavg, file="KavgvsAcc_MethanolPropGly.pdf", width=size.w, height=size.h, units=un)
 
 
 

@@ -1,676 +1,429 @@
-update.packages(checkBuilt=TRUE)
-source('~/mygitFiles/hephex_scatterplots/hephexPlotsASGSR.Rev04.R', chdir = TRUE)
-source('~/mygitFiles/hephex_scatterplots/createPlot.R', chdir = TRUE)
-source('~/mygitFiles/hephex_scatterplots/hephexPlotsASGSR.Rev04.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M06_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M06_RL/X175M06A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M06_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M04_RL/X163M04A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M04_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M07_RL/X168M07A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M07_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M05_RL/X144M05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M05_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M02_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X161M05_RL/X161M05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X161M05_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M03_RL/X163M03A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M03_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X121M03_RL/X121M03A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X121M03_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M06_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M01_RL/X144M01A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M01_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M04_RL/d2K_rev26.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X149M01_RL/X149M01B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X161M05_RL/X161M05B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M04_RL/averagingScript.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M02_RL/averagingScript.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M03_RL/averagingScript.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M04_RL/averagingScript.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D02_RL/C077D02A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/X168M02A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/X168M02D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/X168M02B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-# Plot separate ggplot figures in a loop.#
-library(ggplot2)#
+igIntensityData$NW_IG[xmin_dinex:xmax_index]
+igIntensityData$NW_IG[xmin_idnex:xmax_index]
+igIntensityData$NW_IG[1,xmin_idnex:xmax_index]
+igIntensityData$NW_IG[1,xmin_index:xmax_index]
+igIntensityDAta$NW_IG
+igIntensityData$NW_IG
+length(igIntensityData$NW_IG)
+size(igIntensityData$NW_IG)
+igIntensityData$NW_IG[1:2]
+igIntensityData$NW_IG[1:3]
+igIntensityData$NW_IG[xmin_index:xmax_index]
+max(NW_IG-igIntensityData$NW_IG[xmin_index:xmax_index])
+max(igIntensityData$NW_IG[xmin_index:xmax_index])
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D02_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D03_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D04_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D06_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C080D05_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+xmin_index
+xmax_index
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C080D05_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C085D03_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D02_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D03_RAD/C101D03A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D03_RAD/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D05_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D06_RL/C101D06A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D06_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C104D05_RL/C104D05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C104D05_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C104D06_RL/C104D06A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C104D06_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C108D01_RL/C108D01A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C108D01_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C108D02_RL/C108D02A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C108D02_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C108D03_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C108D04_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_XENON/X126H06_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M01_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X144M06_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X149M02_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_XENON/X126H06_RL/dropSpeedIgniterIntensity_Plot.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H01H102_IW/H01H102A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+tzero.ipsu1timebase
+ipsu2.gmtbase
+ipsu1.gmtbase
+tzero.ipsu1timebase
+ipsu2.gmtbase
+tzero.ipsu1timebase
+imgnum.index
+tzero.imgnum
+experiment.name
+NRframeLookup(experiment.name)$f_NR
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H01H102_IW/H01H102A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+ipsu1.gmtstamp
+tzero.imgnum
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H01H102_IW/H01H102A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+f_NR
+f_NR <-
+numeric(0)
+f_NR
+length(f_NR)
+is.na(fN_R)
+is.na(f_NR)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H01H102_IW/H01H102A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H01H102_IW/d2K_rev26.R', chdir = TRUE)
+wide.complete
+radtime
+qrad.wide
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H01H102_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H01H103_IW/H01H103A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H01H103_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H02H101_IW/H02H101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H02H101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H03H101_IW/H03H101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H03H101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H03H201_IW/H03H201A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H03H201_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H03H202_IW/H03H202A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H03H202_IW/d2K_rev26.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H04H101_IW/H04H101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H04H101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H05H103_IW/H05H103A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H05H103_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H10H101_IW/H10H101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H10H101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H11H101_IW/H11H101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H11H101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H12H101_IW/H12H101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H12H101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H12H201_IW/H12H201A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H12H201_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H13H101_IW/H13H101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H13H101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H13H201_IW/H13H201A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H13H201_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H14H101_IW/H14H101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H14H101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H14H201_IW/H14H201A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_HELIUM/H14H201_IW/d2K_rev26.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H01M102_IW/H01M102A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H01M102_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H03M101_IW/H03M101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H04M202_IW/H04M202A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H04M202_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H05M102_IW/H05M102A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H05M102_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H07M101_IW/H07M101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H07M202_IW/H07M202A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H07M202_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H08M101_IW/H08M101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H08M101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H10M101_IW/H10M101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H10M101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H11M101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H12M101_IW/H12M101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H12M101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H12M102_IW/H12M102A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H12M102_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H13M102_IW/H13M102A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H13M102_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H13M201_IW/H13M201A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H13M201_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H14M101_IW/H14M101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H14M101_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H14M201_IW/H14M201A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H14M201_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H15M102_IW/H15M102A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_HELIUM/H15M102_IW/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_XENON/X100H03_RL/d2K_rev26.R', chdir = TRUE)
+warnings()
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_HEPTANE_XENON/X100H03_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X119M05_RL/X119M05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X119M05_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_AIR/N01M101_IW_RL/N01M101A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_AIR/N01M101_IW_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_AIR/20CAL10_IW_RL/20CAL10A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_AIR/20CAL10_IW_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_AIR/20CAL12_IW_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_AIR/30CAL03_IW_RL/30CAL03A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_AIR/30CAL03_IW_RL/d2K_rev26.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_AIR/40CAL01_IW_RL/40CAL01A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
+source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_AIR/40CAL01_IW_RL/d2K_rev26.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+size.w2 <- 3.25	    #specifies width of .pdf of plot in units specified by un#
+size.h2 <- 2.8		#specifies height of .pdf of plot in units specified by un#
+ptsize2 <- 1.5#
+txtsize2 <- 12#
+titlsize2 <- 7#
 #
-# Make list of variable names to loop over.#
-var_list = combn(names(iris)[1:3], 2, simplify=FALSE)#
-#
-# Make plots.#
-plot_list = list()#
-for (i in 1:3) {#
-    p = ggplot(iris, aes_string(x=var_list[[i]][1], y=var_list[[i]][2])) +#
-        geom_point(size=3, aes(colour=Species))#
-    plot_list[[i]] = p#
-}
-# Save plots to tiff. Makes a separate file for each plot.#
-for (i in 1:3) {#
-    file_name = paste("iris_plot_", i, ".tiff", sep="")#
-    tiff(file_name)#
-    print(plot_list[[i]])#
-    dev.off()#
-}
-plot_list
-plot_list[[1]]
-help(list())
-help(list)
-help(combn)
-var_list
-names(irus)
-names(iris)
-var_list[[1]]
-var_list[[1]][1]
-var_list[[2]][1]
-var_list[[3]][1]
-iris$Sepal.Length
-## Import required packages ###
-library(ggplot2)#
-library(dplyr)#
-## Create data frame with values for both parametric equations ###
-heartdf = data_frame(#
-  t = seq(0, 2*pi, pi/60), #
-  x = 16*sin(t)^3, #x values for heart curve#
-  y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t), #y values for heart curve#
-  x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1), #x values for leminiscate#
-  y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1) #y values for lemniscate#
-  )#
-## Create plot ###
-p = ggplot(data = heartdf, aes(x, y)) + #
-  geom_path(aes(group = 1)) +#
-  geom_path(aes(group = 1, x = x2, y= y2), size = 2, colour = "red") +#
-  geom_polygon(aes(group = 1), fill = "red") +#
-  geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!"), #
-            size = 10, colour = "white")#
-p
-textdf = data_frame(t = max(heartdf$t) + 1:25)
-textdf
-names(textdf)
-textdf$t
-heartdf$time
-heartdf$t
-# install gganimate from GitHub#
-library(devtools)#
-install_github("dgrtwo/gganimate")#
-# install ImageMagick#
-library(installr)#
-install.ImageMagick()
-install.ImageMagick()
-library(installr)
-.libPaths()
-install.packages("magick")
-# Import packages ##
-library(ggplot2)#
-library(dplyr)#
-library(animation)#
-library(gganimate)
-## Create data frame with values for both parametric equations ###
-heartdf = data_frame(#
- t = seq(0, 2*pi, pi/60),#
- x = 16*sin(t)^3,#
- y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t),#
- x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1),#
- y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1)#
-)#
-# Create frame variable for text ##
-textdf = data_frame(t = max(heartdf$t) + 1:25)#
-# Create plot ##
-p = ggplot(data = heartdf, #
-           aes(x, y, frame = round(t, 1), cumulative = TRUE)) + #
- geom_path(aes(group = 1)) +#
- geom_path(aes(group = 2, x = x2, y= y2), size = 2, colour = "red") +#
- geom_polygon(aes(group = 1), fill = "red") +#
- geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!", #
-           frame = t), data = textdf, size = 10, colour = "white")#
-ani.options(interval = 0.06) #animation speed, seconds per frame#
-gganimate(p, title_frame = FALSE)
-round(t, 1)
-textdf
-data_frame
-help(data_frame)
-heartdf$t
-round(heartdf$t)
-round(heartdf$t,1)
-library(plotly)
-install.packages("plotly")
-library(plotly)#
-plot_ly(z = ~volcano)
-source('~/Desktop/Ranimation_example.R', chdir = TRUE)
-# Import packages ##
-library(ggplot2)#
-library(dplyr)#
-library(animation)#
-library(gganimate)
-source('~/Desktop/Ranimation_example.R', chdir = TRUE)
-#---------------- creates animation ---------------------##
-## Create data frame with values for both parametric equations ###
-heartdf = data_frame(#
- t = seq(0, 2*pi, pi/60),#
- x = 16*sin(t)^3,#
- y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t),#
- x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1),#
- y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1)#
-)#
-# Create frame variable for text ##
-textdf = data_frame(t = max(heartdf$t) + 1:25)#
-# Create plot ##
-p = ggplot(data = heartdf, #
-           aes(x, y, frame = round(t, 1), cumulative = TRUE)) + #
- geom_path(aes(group = 1)) +#
- geom_path(aes(group = 2, x = x2, y= y2), size = 2, colour = "red") +#
- geom_polygon(aes(group = 1), fill = "red") +#
- geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!", #
-           frame = t), data = textdf, size = 10, colour = "white")#
-ani.options(interval = 0.06) #animation speed, seconds per frame#
-gganimate(p, title_frame = FALSE)
-source('~/Desktop/Ranimation_example.R', chdir = TRUE)
-ggplotly(p)
-g <- crosstalk::SharedData$new(gapminder, ~continent)#
-gg <- ggplot(g, aes(gdpPercap, lifeExp, color = continent, frame = year)) +#
-  geom_point(aes(size = pop, ids = country)) +#
-  geom_smooth(se = FALSE, method = "lm") +#
-  scale_x_log10()#
-ggplotly(gg) %>% #
-  highlight("plotly_hover")
-g <- crosstalk::SharedData$new(gapminder, ~continent)
-data(gapminder, package = "gapminder")
-g <- crosstalk::SharedData$new(gapminder, ~continent)
-gg <- ggplot(g, aes(gdpPercap, lifeExp, color = continent, frame = year)) +#
-  geom_point(aes(size = pop, ids = country)) +#
-  geom_smooth(se = FALSE, method = "lm") +#
-  scale_x_log10()#
-ggplotly(gg) %>% #
-  highlight("plotly_hover")
-library(animation)#
-library(ggplot2)#
-#
-## Brownian Motion: the 'parallel' version#
-generate_bm_data = function(n = 20, grp = 4) {#
-    nmax = ani.options("nmax")#
-    bm.data = NULL#
-    x = rnorm(n * grp)#
-    y = rnorm(n * grp)#
-    for (i in 1:nmax) {#
-        bm.data = rbind(bm.data, cbind(x = x <- x + rnorm(n * grp), y = y <- y + rnorm(n * grp), #
-                               step = i, group = rep(1:grp, each = n), id = rep(1:n, grp)))#
-    }#
-    bm.data = as.data.frame(bm.data)#
-    bm.data$id = factor(bm.data$id)#
-    bm.data$group = factor(bm.data$group)#
-    bm.data#
-}#
-#
-## generate the data#
-set.seed(123)#
-ani.options(nmax = 50)#
-n = 20; grp = 4#
-bm.data = generate_bm_data(n, grp)#
-#
-## save images and convert them to a single GIF#
-saveMovie({#
-    for (i in unique(bm.data$step)) {#
-        print(qplot(x, y, facets = ~group, geom = "line", colour = id, alpha = I(0.1), #
-                               data = subset(bm.data, step <= i), main = paste("step", i)) + #
-              xlim(range(bm.data$x)) + ylim(range(bm.data$x)) + #
-              geom_point(aes(x = x, y = y, facets = ~group, size = I(rep(3, n * grp))), #
-                               data = subset(bm.data, step == i)) + #
-              theme_bw() + opts(legend.position = "none"))#
-    }#
-}, interval = 0.2, movie.name = "ggplot2-brownian-motion.gif", ani.width = 600, ani.height = 600)
-## record the solutions in each iteration for each group#
-generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
-    0, 10)) {#
-    grp = i = 1#
-    nmax = ani.options("nmax")#
-    nms = names(formals(FUN))#
-    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
-    sol.data = NULL#
-    for (s in init) {#
-        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
-        for (k in 1:(nmax - 2)) {#
-            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
-        }#
-        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
-            group = grp))#
-        grp = grp + 1#
-    }#
-    sol.data = as.data.frame(sol.data)#
-    sol.data$group = factor(sol.data$group)#
-    sol.data#
-}#
-#
-## generate the data#
-set.seed(123)#
-ani.options(nmax = 30)#
-FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
-newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
-x0 = seq(-5, 5, length = 50)#
-y0 = FUN(x0)#
-newton.data$zero = 0#
-#
-p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
-#
-## convert to GIF#
-saveMovie({   #
-    for (i in unique(newton.data$iter)) {        #
-        ann.col = rep(c("history", "current"), c(i - 1, 1))#
-        with(newton.data, {#
-            print(qplot(solution, zero, facets = ~group, color = ann.col, #
-                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
-                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
-                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
-                                data = subset(newton.data, iter == i)) + #
-                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
-                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
-                         theme_bw() + opts(legend.position = "none"))#
-        })#
-    }   #
-}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
-library(animation)#
-library(ggplot2)#
-## record the solutions in each iteration for each group#
-generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
-    0, 10)) {#
-    grp = i = 1#
-    nmax = ani.options("nmax")#
-    nms = names(formals(FUN))#
-    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
-    sol.data = NULL#
-    for (s in init) {#
-        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
-        for (k in 1:(nmax - 2)) {#
-            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
-        }#
-        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
-            group = grp))#
-        grp = grp + 1#
-    }#
-    sol.data = as.data.frame(sol.data)#
-    sol.data$group = factor(sol.data$group)#
-    sol.data#
-}#
-#
-## generate the data#
-set.seed(123)#
-ani.options(nmax = 30)#
-FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
-newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
-x0 = seq(-5, 5, length = 50)#
-y0 = FUN(x0)#
-newton.data$zero = 0#
-#
-p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
-#
-## convert to GIF#
-saveMovie({   #
-    for (i in unique(newton.data$iter)) {        #
-        ann.col = rep(c("history", "current"), c(i - 1, 1))#
-        with(newton.data, {#
-            print(qplot(solution, zero, facets = ~group, color = ann.col, #
-                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
-                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
-                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
-                                data = subset(newton.data, iter == i)) + #
-                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
-                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
-                         theme_bw() + opts(legend.position = "none"))#
-        })#
-    }   #
-}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
-library(animation)#
-library(ggplot2)#
-## record the solutions in each iteration for each group#
-generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
-    0, 10)) {#
-    grp = i = 1#
-    nmax = ani.options("nmax")#
-    nms = names(formals(FUN))#
-    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
-    sol.data = NULL#
-    for (s in init) {#
-        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
-        for (k in 1:(nmax - 2)) {#
-            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
-        }#
-        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
-            group = grp))#
-        grp = grp + 1#
-    }#
-    sol.data = as.data.frame(sol.data)#
-    sol.data$group = factor(sol.data$group)#
-    sol.data#
-}#
-#
-## generate the data#
-set.seed(123)#
-ani.options(nmax = 30)#
-FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
-newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
-x0 = seq(-5, 5, length = 50)#
-y0 = FUN(x0)#
-newton.data$zero = 0#
-#
-p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
-#
-## convert to GIF#
-saveGIF({   #
-    for (i in unique(newton.data$iter)) {        #
-        ann.col = rep(c("history", "current"), c(i - 1, 1))#
-        with(newton.data, {#
-            print(qplot(solution, zero, facets = ~group, color = ann.col, #
-                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
-                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
-                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
-                                data = subset(newton.data, iter == i)) + #
-                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
-                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
-                         theme_bw() + opts(legend.position = "none"))#
-        })#
-    }   #
-}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
-library(animation)#
-library(ggplot2)#
-## record the solutions in each iteration for each group#
-generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
-    0, 10)) {#
-    grp = i = 1#
-    nmax = ani.options("nmax")#
-    nms = names(formals(FUN))#
-    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
-    sol.data = NULL#
-    for (s in init) {#
-        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
-        for (k in 1:(nmax - 2)) {#
-            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
-        }#
-        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
-            group = grp))#
-        grp = grp + 1#
-    }#
-    sol.data = as.data.frame(sol.data)#
-    sol.data$group = factor(sol.data$group)#
-    sol.data#
-}#
-#
-## generate the data#
-set.seed(123)#
-ani.options(nmax = 30)#
-FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
-newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
-x0 = seq(-5, 5, length = 50)#
-y0 = FUN(x0)#
-newton.data$zero = 0#
-#
-p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
-#
-## convert to GIF#
-saveGIF({   #
-    for (i in unique(newton.data$iter)) {        #
-        ann.col = rep(c("history", "current"), c(i - 1, 1))#
-        with(newton.data, {#
-            print(qplot(solution, zero, facets = ~group, color = ann.col, #
-                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
-                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
-                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
-                                data = subset(newton.data, iter == i)) + #
-                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
-                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
-                         theme_bw() #+ opts(legend.position = "none"))#
-        })#
-    }   #
-}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
-library(animation)#
-library(ggplot2)#
-## record the solutions in each iteration for each group#
-generate_newton_data = function(FUN = function(x) x^2 - 4, init = runif(4, #
-    0, 10)) {#
-    grp = i = 1#
-    nmax = ani.options("nmax")#
-    nms = names(formals(FUN))#
-    grad = deriv(as.expression(body(FUN)), nms, function.arg = TRUE)#
-    sol.data = NULL#
-    for (s in init) {#
-        x = c(s, s - FUN(s)/attr(grad(s), "gradient"))#
-        for (k in 1:(nmax - 2)) {#
-            x = c(x, x[k + 1] - FUN(x[k + 1])/attr(grad(x[k + 1]), "gradient"))#
-        }#
-        sol.data = rbind(sol.data, data.frame(solution = x, iter = 1:nmax, #
-            group = grp))#
-        grp = grp + 1#
-    }#
-    sol.data = as.data.frame(sol.data)#
-    sol.data$group = factor(sol.data$group)#
-    sol.data#
-}#
-#
-## generate the data#
-set.seed(123)#
-ani.options(nmax = 30)#
-FUN = function(x) 5 * x^3 - 7 * x^2 - 40 * x + 100#
-newton.data = generate_newton_data(FUN, runif(4, -5, 5))#
-x0 = seq(-5, 5, length = 50)#
-y0 = FUN(x0)#
-newton.data$zero = 0#
-#
-p = qplot(x0, y0, data = data.frame(x0, y0), geom = "line") + xlim(range(x0)) + ylim(range(y0))#
-#
-## convert to GIF#
-saveGIF({   #
-    for (i in unique(newton.data$iter)) {        #
-        ann.col = rep(c("history", "current"), c(i - 1, 1))#
-        with(newton.data, {#
-            print(qplot(solution, zero, facets = ~group, color = ann.col, #
-                                data = subset(newton.data, iter <= i), ylab = "y", main = paste("iteration", i)) + #
-                         xlim(range(x0)) + ylim(range(y0)) + ylab("y") + #
-                         geom_vline(aes(xintercept = solution, facets = ~group), colour = "gray", linetype = 2, #
-                                data = subset(newton.data, iter == i)) + #
-                         geom_point(aes(size = rep(c(1, 2), c(i - 1, 1)))) +#
-                         geom_line(aes(x = x0, y = y0), color = "black", data = data.frame(x0, y0)) + #
-                         theme_bw() ) #+ opts(legend.position = "none"))#
-        })#
-    }   #
-}, interval = 5, movie.name = "ggplot2-newton-method.gif", ani.width = 600, ani.height = 600)
-sofiamolodanof
-# Import packages ##
-library(ggplot2)#
-library(dplyr)#
-library(animation)#
-library(gganimate)#
- ## Import required packages ###
-# ## Create data frame with values for both parametric equations ###
-# heartdf = data_frame(#
-#   t = seq(0, 2*pi, pi/60), #
-#   x = 16*sin(t)^3, #x values for heart curve#
-#   y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t), #y values for heart curve#
-#   x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1), #x values for leminiscate#
-#   y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1) #y values for lemniscate#
-#   )#
-# ## Create plot ###
-# p = ggplot(data = heartdf, aes(x, y)) + #
-#   geom_path(aes(group = 1)) +#
-#   geom_path(aes(group = 1, x = x2, y= y2), size = 2, colour = "red") +#
-#   geom_polygon(aes(group = 1), fill = "red") +#
-#   geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!"), #
-#             size = 10, colour = "white")#
-# p#
-#
-#---------------- creates animation ---------------------##
-## Create data frame with values for both parametric equations ###
-heartdf = data_frame(#
- t = seq(0, 2*pi, pi/60),#
- x = 16*sin(t)^3,#
- y = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t),#
- x2 = 3*sqrt(2)*cos(t)/(sin(t)^2 + 1),#
- y2 = 20 + 4*sqrt(2)*cos(t)*sin(t)/(sin(t)^2 + 1)#
-)#
-# Create frame variable for text ##
-textdf = data_frame(t = max(heartdf$t) + 1:25)#
-# Create plot ##
-p = ggplot(data = heartdf, #
-           aes(x, y, frame = round(t, 1), cumulative = TRUE)) + #
- geom_path(aes(group = 1)) +#
- geom_path(aes(group = 2, x = x2, y= y2), size = 2, colour = "red") +#
- geom_polygon(aes(group = 1), fill = "red") +#
- geom_text(aes(x = 0, y = 0, label = "Happy Valentine's Day \n Marioly!!!", #
-           frame = t), data = textdf, size = 10, colour = "white")#
-ani.options(interval = 0.06) #animation speed, seconds per frame#
-gganimate(p, title_frame = FALSE)#
-#
-# ggplotly(p)
-library(plotly)#
-#
-data(gapminder, package = "gapminder")#
-g <- crosstalk::SharedData$new(gapminder, ~continent)#
-gg <- ggplot(g, aes(gdpPercap, lifeExp, color = continent, frame = year)) +#
-  geom_point(aes(size = pop, ids = country)) +#
-  geom_smooth(se = FALSE, method = "lm") +#
-  scale_x_log10()#
-ggplotly(gg) %>% #
-  highlight("plotly_hover")
-devtools::install_github('hadley/ggplot2')
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/plotFbyF.R', chdir = TRUE)
-executeCommand2
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M02_RL/plotFbyF.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M05_RL/plotFbyF.R', chdir = TRUE)
-accTrajectoriesFiltered
-min(accTrajectoriesFiltered$time)
-min(dataFiltered$time)
-min(dDataFiltered$time)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M05_RL/X168M05D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M05_RL/X168M05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M05_RL/X168M05B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M03_RL/plotFbyF.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M02_RL/plotFbyF.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M04_RL/plotFbyF.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X175M03_RL/plotFbyF.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D05_RL/C101D05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D05_RL/C101D05B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D05_RL/C101D05D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D02_RL/C101D02A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D02_RL/C101D02B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C101D02_RL/C101D02D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C080D05_RL/C080D05A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C080D05_RL/C080D05B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D06_RL/C077D06B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C077D06_RL/C077D06B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-setwd('$HOME')
-setwd('/Users/changvang'')
-)
+ptsize <- 4.0#
+p2 <- ggplot(dfscatter.global)#
+p2 <- p2 + aes(x=do, y=Vo)#
+# p2 <- p2 + geom_point(mapping=aes(x=do, y=Vo, shape=fuel, colour=fuel, size=1.2))#
+p2 <- p2 + aes(colour=fuel, shape=fuel) #
+p2 <- p2 + geom_point(size=ptsize2) +#
+			scale_colour_manual(#
+				values=c(#
+					"#e41a1c",  #red (set1)#
+					"#984ea3",  #purple (set1)#
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)#
+					"#4daf4a",  #green (set1)#
+					"#e7298a",  #pink (dark2)#
+					"#d95f02",  #brown (dark2)#
+					"#377eb8",  #blue (set1)#
+					"#66c2a5"))  #army grn (dark2)#
+p2 <- p2 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.8, 0.87),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=9), #
+	axis.title.x = element_text(size=txtsize2),#
+	axis.title.y = element_text(size=txtsize2),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(2.5,"mm"),#
+	legend.key.width = unit(3,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=txtsize2,colour="black") ) +#
+	# guides(colour=guide_legend(ncol=5)) +#
+	# guides(linetype=guide_legend(ncol=5))	+#
+	xlab(expression("D"[o]*" (mm)") ) +#
+	ylab(expression("V"[o]*" (mm/s)") )
+p2
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+csvfilenames
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+12/30
+csvfilenames
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+key_time_points$FLEX_ID[70]
+key_time_points$T_IGNITION[keyRow_time_pts]
+length(key_time_points$T_IGNITION[keyRow_time_pts])
+is.na(key_time_points$T_IGNITION[keyRow_time_pts])
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+is.na(tmin)
+K_comb
+length(keyRow_time_pts)
+is.na(tmin)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+is.na(tmin)
+is.na(tmin) == 1
+is.na(tmin) == 0
+is.na(tmin) != 1
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+is.na(tmin) != 1
+is.na(tmin)
+length(tmin)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+tmax
+length(tmin)
+tmin
+is.na(tmin)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+is.na(tmin)
+is.na(tmin) != 0
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+is.na(tmin)
+i
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+i
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+is.na(tmin)
+is.na(tmin) != 1
+(length(keyRow_time_pts) != 0)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+i
+length(tmin)
+tmin
+i
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+i
+length(tmin)
+tmin
+key_time_points
+i
+expname
+i
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+tmin == "NA"
+tmin == NA
+tmin == 1
+tmin
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+i
+csvfilenames[i]
+length(tmin)
+tmin
+length(tmin)
+is.na(tmin)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+csvfilenames
+csvfilenames'
 ''
-setwd('/Users/changvang')
-Sys.setenv
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-igExt_times
-names(igExt_times)
-igExt_times$T_EXTINCTION
-igExt_times$T_EXTINCTION[2]
-csvfilenames
-csvfilenames <- dir(pattern = "*_D2KROUT.csv")
-csvfilenames
-currentDirectory
-setwd(currentDirectory)
-csvfilenames <- dir(pattern = "*_D2KROUT.csv")
-csvfilenames
-pmatch('C101D05',csvfilenames)
-csvfilenames[14]
-igExt_times$FLEX_ID[1]
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+i
+tmax
+K_comb
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+i
+key_time_points
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, #
+				   				key=key_time_points, #
+				   				expInterestNames=propGly_cat4)
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, #
+				   				key=key_time_points, #
+				   				expInterestNames=propGly_cat4)
 rm(list=ls(all=TRUE))		#clear workspace of all variables#
 #
 library(ggplot2)		#this is needed to generate plots#
 library(RColorBrewer)	#this is needed for the color package used in generating plots#
+library(abind)#
+library(reshape)#
 #
 currentDirectory <- getwd()#
 setwd(currentDirectory)#
-graphics.off()#
 #
+source("/Users/changvang/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dataFrameConstruct.R")#
 ########## READ RELEVANT FILES/DATA AND ASK FOR USER INPUT ###########
 #read in names of all .csv files in current directory#
 csvfilenames <- dir(pattern = "*_D2KROUT.csv")#
 #
 #read in key containing ignition and extinction times of experiments#
-igExt_times <- read.csv(file = "/Users/changvang/mygitFiles/flex_experiment_information/ignitionExtinctionTimes.csv",#
+key_time_points <- read.csv(file = "/Users/changvang/mygitFiles/flex_experiment_information/ignitionExtinctionTimes.csv",#
 			head=TRUE, sep=",",#
 			stringsAsFactors=FALSE)#
 #
-i <- 1#
-pmatch(igExt_times$FLEX_ID[i],csvfilenames)
-currentExpData_index <- pmatch(expName,csvfilenames)#
-currentExpData <- read.csv(file=csvfilenames[currentExpData_index])
-csvfilenames[2]
-currentExpData_index
-expName <- igExt_times$FLEX_ID[i]#
-currentExpData_index <- pmatch(expName,csvfilenames)
-currentExpData_index
-currentExpData <- read.csv(file=csvfilenames[currentExpData_index])
-currentExpData
-names(currentExpData)
-nrow(currentExpData)
-expName_Array <- rep(expName,nrow(currentExpData))
-expName_Array
-names(currentExpData)
-# create global data frame#
-globalDataframe <- data.frame(expName_Array, #
-					currentExpData$time,#
-					currentExpData$tot_vel_fit)
-globalDataframe
-nrow(igExt_times)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-globalDataframe
-# set names in global data frame#
-globalDataframe <- setNames(globalDataframe, c("expname","time","vel_mag")
-)
-names(globalDataframe)
-names(igExt_times)
-names(currentExpData)
-print(igExt_times$T_IGNITION[i])#
-	timeIndexMatch <- which.min(abs(currentExpData$time - igExt_times$T_IGNITION[i]))
-i
-timeIndexMatch
-currentExpData[185]
-currentExpData$time[185]
-currentExpData$time[184]
-currentExpData$time[186]
-currentExpData$time[185] -  6.1167
-currentExpData$time[184] -  6.1167
-currentExpData$time[186] -  6.1167
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-timeIndexMatchLocal
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-timeIndexMatchGlobal
-i
-timeIndexMatchLocal
-timeIndexMatchGlobal
-timeIndexMatchGlobal[i] <- timeIndexMatchLocal
-timeIndexMatchGlobal <- numeric(nrow(igExt_times))
-timeIndexMatchGlobal
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-timeIndexMatchGlobal
-igExt_time
-igExt_times
-globalDataframe$time[126]
-globalDataframe$time[532]
-globalDataframe$time[634]
-timeIndexMatchLocal
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-timeIndexMatchGlobal
-igExt_times
-globalDataframe$time[1041]
-globalDataframe$time[1040]
-globalDataframe$time[1042]
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-igExt_times
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-igExt_times
-EXT_timeIndexMatchGlobal
-globalDataframe$time[292]
-globalDataframe$time[772]
-globalDataframe$time[1332]
-names(globalDataframe)
-# overall velocity magnitude plot#
-velMagnitudePlot <- ggplot(globalDataframe )#
-velMagnitudePlot <- velMagnitudePlot + geom_point(mapping=aes(x=time, y=vel_mag, colour=expname)) #
-velMagnitudePlot <- velMagnitudePlot + 	theme_bw() +#
+#read experimental parameters for single component droplet experiments#
+keyfilename <- dir(pattern="single_key.csv")#
+key_exp_parameters <- read.csv(file=keyfilename,head=TRUE,sep=",",#
+		stringsAsFactors=FALSE)#
+# read each csv file and save variables of interest#
+for (i in 1:length(csvfilenames)){#
+	#store experiment name#
+	expname <- unlist( strsplit(csvfilenames[i],"_") )[1]#
+	temp <- read.csv(file=csvfilenames[i],head=TRUE,sep=",",#
+		stringsAsFactors=FALSE)	#
+#
+	#grab do for current experiment from key_exp_parameters#
+	keyRow <- which(key_exp_parameters$expname == expname)#
+#
+	#grab index for current experiment from key_time_points#
+	keyRow_time_pts <- which(key_time_points$FLEX_ID == expname)#
+	# print(keyRow_time_pts)#
+#
+	#extract only variables of interest#
+	df.temp <- data.frame(temp$time, temp$do, temp$x_loc_fit,#
+						temp$x_vel_fit, temp$y_loc_fit,#
+						temp$y_vel_fit)#
+	expname <- rep(expname,nrow(temp))#
+	df.temp <- cbind(expname, df.temp )#
+#
+	#grab fueltype for current experiment#
+	fuel <- key_exp_parameters$fuel[keyRow]#
+	fuel_type <- rep(fuel,nrow(temp))#
+	df.temp <- cbind(df.temp, fuel_type)#
+#
+	#grab diffusivities for applicable experiments. This requires#
+	#reading in the single_key file with data columns for #
+	#the diffusivities, D#
+	Dvalue <- key_exp_parameters$D[keyRow]	#
+	Dvalue_factor <- rep(Dvalue,nrow(temp))#
+	df.temp <- cbind(df.temp, Dvalue_factor)#
+#
+	#grab xenon molefraction and chamber pressure for#
+	#current experiment#
+	xe_mf <- key_exp_parameters$Xe[keyRow]#
+	pressure <- key_exp_parameters$p[keyRow]#
+	xe <- rep( xe_mf,nrow(temp) )#
+	pressure_chamber <- rep( pressure, nrow(temp) )#
+	df.temp <- cbind(df.temp, xe, pressure_chamber)#
+#
+	#create another data frame to contain variables of interest#
+	#for generating scatter plots#
+#
+	tmin <- key_time_points$T_IGNITION[keyRow_time_pts]#
+	tmax <- key_time_points$T_EXTINCTION[keyRow_time_pts]#
+	# check if tmax is empty#
+	if ( length(tmax) == 0){#
+		tmax <- NA#
+	}#
+	# calculate average burn rate and droplet acceleration during combustion and after extinction#
+	# if (length(keyRow_time_pts) != 0 ){#
+		# tmin <- key_time_points$T_IGNITION[keyRow_time_pts]#
+		# tmax <- key_time_points$T_EXTINCTION[keyRow_time_pts]	#
+	if ( (length(keyRow_time_pts) != 0) & (is.na(tmax) != 1) ){#
+		if ( max(temp$time) > tmax ){#
+			K_comb <- mean( subset(temp, time >= tmin & time <= tmax)$k_bw1 )#
+			K_ext <- mean( subset(temp, time > tmax )$k_bw1 )#
+			x_acc_comb <- mean( subset(temp, time >= tmin & time <= tmax)$x_acc_fit )#
+			y_acc_comb <- mean( subset(temp, time >= tmin & time <= tmax)$y_acc_fit )	#
+			total_acc_comb <- sqrt( x_acc_comb^2 + y_acc_comb^2 )#
+#
+			x_acc_ext <- mean( subset(temp, time > tmax )$x_acc_fit )#
+			y_acc_ext <- mean( subset(temp, time > tmax )$y_acc_fit )		#
+			total_acc_ext <- sqrt( x_acc_ext^2 + y_acc_ext^2 )				#
+		} # if max(temp$time)#
+	}else{#
+		K_comb <- NA #
+		K_ext <- NA#
+		x_acc_comb <- NA#
+		y_acc_comb <- NA #
+		total_acc_comb <- NA#
+#
+		x_acc_ext <- NA #
+		y_acc_ext <- NA #
+		total_acc_ext <- NA#
+	}#
+	#calculate initial droplet velocity#
+	frameVo <- 12 # the first 0.4 seconds#
+	range_index <- seq(1,frameVo)#
+	Vo <- mean(sqrt(temp$x_vel_fit[range_index]^2 + temp$y_vel_fit[range_index]^2) )#
+#
+	#calculate Vo_ofc the average velocity from needle retraction#
+	#to t_ofc the time at which the onset of flame contraction occurs#
+	if( key_exp_parameters$tofc[keyRow] == 0 ){#
+		Vo_ofc <- 0#
+	}else{#
+		temp_partial <- subset(temp, (time>=0) & (time<=key_exp_parameters$tofc[keyRow]) )#
+		Vo_ofc <- mean( sqrt(temp_partial$x_vel_fit^2 + temp_partial$y_vel_fit^2) )#
+	}#
+	df.scatter <- data.frame(expname[1],#
+							temp$do[1], Vo, fuel, Vo_ofc, Dvalue,#
+							K_comb, K_ext, total_acc_comb, total_acc_ext)#
+	if ( i == 1){#
+		df.global <- df.temp#
+		dfscatter.global <- df.scatter#
+	}else{#
+		df.global <- rbind(df.global, df.temp)#
+		dfscatter.global <- rbind(dfscatter.global, df.scatter)#
+	}#
+}  #for csv.filenames#
+#
+df.global <- setNames(df.global, c("expname","time","do",#
+									"x_loc_fit","x_vel_fit",#
+									"y_loc_fit","y_vel_fit",#
+									"fuel","D","Xe","p") )#
+dfscatter.global <- setNames(dfscatter.global,c("expname","do","Vo",#
+									"fuel","Vofc","D",#
+									"K_comb","K_ext","total_acc_comb","total_acc_ext"))#
+#
+# create vector grouping do sizes and add to df.global#
+doSize <- as.character(nrow(df.global))#
+for (i in 1:nrow(df.global)){#
+	if ( df.global$do[i] > 3.0 ){#
+		doSize[i] <- "Large"#
+	}else{#
+		doSize[i] <- "Small"#
+	}#
+}#
+df.global <- cbind(df.global, doSize)#
+# just a plot of all Methanol-Xenon dorplets for visual observation only#
+do_low <- 0.0 #3.1#
+do_high <- 6.5 #3.8#
+metXenon_only <- ggplot(subset(df.global, Xe == 0 &#
+			fuel== "Heptane" & do > do_low & do <= do_high ) )#
+metXenon_only <- metXenon_only + #
+	geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) #
+metXenon_only <- metXenon_only + 	theme_bw() +#
 	theme(plot.title = element_text(colour="black",face="bold",size=6),#
 	legend.position=c(0.9, 0.75),#
 	legend.title = element_blank(),#
@@ -682,12 +435,39 @@ velMagnitudePlot <- velMagnitudePlot + 	theme_bw() +#
 	panel.background = element_rect(fill = "gray90"),#
 	axis.text = element_text(size=12,colour="black") ) +#
 	xlab(expression("X (mm)") ) +#
-	ylab(expression("Y (mm)") )
-velMagnitudePlot
-# overall velocity magnitude plot#
-velMagnitudePlot <- ggplot(globalDataframe )#
-velMagnitudePlot <- velMagnitudePlot + geom_point(mapping=aes(x=time, y=vel_mag, colour=expname)) #
-velMagnitudePlot <- velMagnitudePlot + 	theme_bw() +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6		#specifies height of .pdf of plot in units specified by un#
+un <- "in"		#specifies unit of size.w and size.h#
+ggsave(metXenon_only, file="Heptane_Only.pdf", width=size.w, height=size.h, units=un)#
+#
+# list of methanol-xenon experiments with similar trajectories (category 1) to#
+# that of X182M01 (an evaporating droplet)#
+methXenon_cat1 <- c("X182M01",#
+					"X136M01",#
+					"X168M05", #
+					# "X175M06",#
+					# "X119M02",#
+					# "X119M05",					#
+					"X119M06",#
+					"X119M04",#
+					"X136M03")#
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, #
+				   				key=key_time_points, #
+				   				expInterestNames=methXenon_cat1)#
+globalDataframe <- dataTable$globalDataframe#
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal#
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal#
+#
+# p_methXenon_cat1 <- ggplot(subset(df.global, expname== methXenon_cat1) )#
+p_methXenon_cat1 <- ggplot(subset(df.global, df.global$expname %in% methXenon_cat1) )#
+p_methXenon_cat1 <- p_methXenon_cat1 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) #
+p_methXenon_cat1 <- p_methXenon_cat1 + 	theme_bw() +#
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],#
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),#
+	 shape=17,#
+	 colour="black", size=3) + #
 	theme(plot.title = element_text(colour="black",face="bold",size=6),#
 	legend.position=c(0.9, 0.75),#
 	legend.title = element_blank(),#
@@ -698,46 +478,616 @@ velMagnitudePlot <- velMagnitudePlot + 	theme_bw() +#
 	legend.key.height = unit(5,"mm"),#
 	panel.background = element_rect(fill = "gray90"),#
 	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6		#specifies height of .pdf of plot in units specified by un#
+un <- "in"		#specifies unit of size.w and size.h#
+ggsave(p_methXenon_cat1, file="methanolXenon_cat1.pdf", width=size.w, height=size.h, units=un)
+# list of methanol-xenon experiments with similar trajectories (category 2) #
+methXenon_cat2 <- c("X175M06",#
+					"X163M04",#
+					"X168M07",#
+					"X144M05",#
+					"X163M02",#
+					"X161M05",#
+					"X163M03",#
+					"X121M03", #
+					"X144M01",#
+					"X144M06",#
+					"X175M04",  #--original--##
+					"X161M03",#
+					"X168M05",#
+					"X168M06",#
+					"X175M01",#
+					"X175M02",#
+					"X175M03",#
+					"X175M05")#
+					# "X182M01")#
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, #
+				   				key=key_time_points, #
+				   				expInterestNames=methXenon_cat2)#
+globalDataframe <- dataTable$globalDataframe#
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal#
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal#
+#
+# colour=sqrt(x_vel_fit^2+y_vel_fit^2)#
+# p_methXenon_cat2 <- ggplot(subset(df.global, expname== methXenon_cat2) )#
+p_methXenon_cat2 <- ggplot(subset(df.global, df.global$expname %in% methXenon_cat2) )#
+p_methXenon_cat2 <- p_methXenon_cat2 + geom_point(mapping=aes(x=x_loc_fit, #
+	y=y_loc_fit, colour=sqrt(x_vel_fit^2+y_vel_fit^2) )) +#
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],#
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),#
+	 shape=17,#
+	 colour="black", size=3)	#
+p_methXenon_cat2 <- p_methXenon_cat2 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.1, 0.75),#
+	# legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6			#specifies height of .pdf of plot in units specified by un#
+un <- "in"			#specifies unit of size.w and size.h#
+ggsave(p_methXenon_cat2, file="methanolXenon_cat2.pdf", width=size.w, height=size.h, units=un)
+# methXenon_cat2_velocity <- ggplot(subset(df.global, expname== methXenon_cat2) )#
+methXenon_cat2_velocity <- ggplot(subset(df.global, df.global$expname %in% methXenon_cat2) )#
+methXenon_cat2_velocity <- methXenon_cat2_velocity + geom_point(mapping=aes(x=time, #
+	y=sqrt(x_vel_fit^2 + y_vel_fit^2), colour=do)) #
+methXenon_cat2_velocity <- methXenon_cat2_velocity + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	ylab(expression("Velocity Magnitude (mm/s)") ) +#
+	xlab(expression("Time (s)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6		#specifies height of .pdf of plot in units specified by un#
+un <- "in"		#specifies unit of size.w and size.h#
+ggsave(methXenon_cat2_velocity, file="methanolXenon_cat2_Velocities_doGroup.pdf", width=size.w, height=size.h, units=un)#
+methXenon_cat5 <- c("X163M07",#
+					"X163M01",#
+					"X119M04",#
+					"X121M01")#
+# p_methXenon_cat5 <- ggplot(subset(df.global, expname== methXenon_cat5) )#
+p_methXenon_cat5 <- ggplot(subset(df.global, df.global$expname %in% methXenon_cat5) )#
+p_methXenon_cat5 <- p_methXenon_cat5 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) #
+p_methXenon_cat5 <- p_methXenon_cat5 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6		#specifies height of .pdf of plot in units specified by un#
+un <- "in"		#specifies unit of size.w and size.h#
+ggsave(p_methXenon_cat5, file="methanolXenon_cat5.pdf", width=size.w, height=size.h, units=un)#
+# experiments which have similar diameters to experiments#
+# where droplet is just evaporating#
+sim_experiments <- c("X136M01", "X144M01", "X144M04", "X168M05", "X182M01")#
+do_X182M01 <- 3.2#
+p_incr <- 0.10#
+# p_similar <- ggplot(subset(df.global, expname == sim_experiments))#
+p_similar <- ggplot(subset(df.global, #
+			Xe != 0 & fuel== "Methanol" & do <= (1+p_incr)*do_X182M01 & do >= (1-p_incr)*do_X182M01 ) )#
+p_similar <- p_similar + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) #
+p_similar <- p_similar + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6		#specifies height of .pdf of plot in units specified by un#
+un <- "in"		#specifies unit of size.w and size.h#
+ggsave(p_similar, file="methanolXenon_doSimilar.pdf", width=size.w, height=size.h, units=un)#
+p1 <- ggplot(df.global)#
+p1 <- p1 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=expname)) #
+p1 <- p1 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	guides(colour=guide_legend(ncol=5)) +#
+	guides(linetype=guide_legend(ncol=5))	+#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6		#specifies height of .pdf of plot in units specified by un#
+un <- "in"		#specifies unit of size.w and size.h#
+ggsave(p1, file="dropTraj_all_do.pdf", width=size.w, height=size.h, units=un)#
+#
+p1v2 <- ggplot(df.global)#
+p1v2 <- p1v2 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=fuel)) #
+p1v2 <- p1v2 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=12), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	# guides(colour=guide_legend(ncol=5)) +#
+	# guides(linetype=guide_legend(ncol=5))	+#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+ggsave(p1v2, file="dropTraj_all_fuel.pdf", width=size.w, height=size.h, units=un)#
+p1v3 <- ggplot( subset(df.global,df.global$fuel != "Methanol") )#
+p1v3 <- p1v3 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=fuel)) #
+p1v3 <- p1v3 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=12), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	# guides(colour=guide_legend(ncol=5)) +#
+	# guides(linetype=guide_legend(ncol=5))	+#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+ggsave(p1v3, file="dropTraj_all_hepProGly.pdf", width=size.w, height=size.h, units=un)#
+p1v4 <- ggplot( subset(df.global,df.global$fuel != "Pro95/Gly5") )#
+p1v4 <- p1v4 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=fuel)) #
+p1v4 <- p1v4 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=12), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	# guides(colour=guide_legend(ncol=5)) +#
+	# guides(linetype=guide_legend(ncol=5))	+#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+ggsave(p1v4, file="dropTraj_all_hepMethanol.pdf", width=size.w, height=size.h, units=un)#
+p1v5 <- ggplot( subset(df.global, D > 0) )#
+p1v5 <- p1v5 + geom_point(mapping=aes(x=x_loc_fit, y=y_loc_fit, colour=D)) #
+p1v5 <- p1v5 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=12), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	# guides(colour=guide_legend(ncol=5)) +#
+	# guides(linetype=guide_legend(ncol=5))	+#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+ggsave(p1v5, file="dropTraj_PropGly_diffGroup.pdf", width=size.w, height=size.h, units=un)#
+size.w2 <- 3.25	    #specifies width of .pdf of plot in units specified by un#
+size.h2 <- 2.8		#specifies height of .pdf of plot in units specified by un#
+ptsize2 <- 1.5#
+txtsize2 <- 12#
+titlsize2 <- 7#
+#
+ptsize <- 4.0#
+p2 <- ggplot(dfscatter.global)#
+p2 <- p2 + aes(x=do, y=Vo)#
+# p2 <- p2 + geom_point(mapping=aes(x=do, y=Vo, shape=fuel, colour=fuel, size=1.2))#
+p2 <- p2 + aes(colour=fuel, shape=fuel) #
+p2 <- p2 + geom_point(size=ptsize2) +#
+			scale_colour_manual(#
+				values=c(#
+					"#e41a1c",  #red (set1)#
+					"#984ea3",  #purple (set1)#
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)#
+					"#4daf4a",  #green (set1)#
+					"#e7298a",  #pink (dark2)#
+					"#d95f02",  #brown (dark2)#
+					"#377eb8",  #blue (set1)#
+					"#66c2a5"))  #army grn (dark2)#
+p2 <- p2 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.8, 0.87),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=9), #
+	axis.title.x = element_text(size=txtsize2),#
+	axis.title.y = element_text(size=txtsize2),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(2.5,"mm"),#
+	legend.key.width = unit(3,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=txtsize2,colour="black") ) +#
+	# guides(colour=guide_legend(ncol=5)) +#
+	# guides(linetype=guide_legend(ncol=5))	+#
+	xlab(expression("D"[o]*" (mm)") ) +#
+	ylab(expression("V"[o]*" (mm/s)") ) 	#
+#
+# ggsave(p2, file="dovsVo_all_droplets.pdf", width=size.w, height=size.h, units=un)#
+ggsave(p2, file="dovsVo_all_droplets.pdf", width=size.w2, height=size.h2, units=un)#
+ptsize <- 4.0#
+p3 <- ggplot( subset(dfscatter.global, Vofc > 0 ) )#
+p3 <- p3 + aes(x=D, y=Vofc)#
+# p3 <- p3 + geom_point(mapping=aes(x=do, y=Vo, shape=fuel, colour=fuel, size=1.2))#
+p3 <- p3 + aes(colour=fuel, shape=fuel) #
+p3 <- p3 + geom_point(size=ptsize) +#
+			scale_colour_manual(#
+				values=c(#
+					"#e41a1c",  #red (set1)#
+					"#984ea3",  #purple (set1)#
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)#
+					"#4daf4a",  #green (set1)#
+					"#e7298a",  #pink (dark2)#
+					"#d95f02",  #brown (dark2)#
+					"#377eb8",  #blue (set1)#
+					"#66c2a5"))  #army grn (dark2)#
+p3 <- p3 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=12), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	# guides(colour=guide_legend(ncol=5)) +#
+	# guides(linetype=guide_legend(ncol=5))	+#
+	xlab(expression("D (m"^2*"/s)") ) +#
+	ylab(expression("V"[o]*" (mm/s)") ) 	#
+#
+ggsave(p3, file="DvsVofc_propGly.pdf", width=size.w, height=size.h, units=un)#
+heptaneXenon_cat1 <- c("X177H12",#
+					   "X177H06",#
+					   "X177H07",#
+					   "X100H07",#
+					   "X177H04",#
+					   "X126H07",#
+					   "X129H02",#
+					   "X140H05",#
+					   "X100H01",#
+					   "X126H01",#
+					   "X126H02",#
+					   "X126H06",#
+					   "X161H01",#
+					   "X170H03")#
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, #
+				   				key=key_time_points, #
+				   				expInterestNames=heptaneXenon_cat1)#
+globalDataframe <- dataTable$globalDataframe#
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal#
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal#
+#
+# plot x-y trajectory for heptane/xenon droplets#
+p_heptaneXenon_cat1 <- ggplot(subset(df.global, df.global$expname %in% heptaneXenon_cat1) )#
+p_heptaneXenon_cat1 <- p_heptaneXenon_cat1 + geom_point(mapping=aes(x=x_loc_fit, #
+	y=y_loc_fit, colour=expname) ) +#
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],#
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),#
+	 shape=17,#
+	 colour="black", size=3) #
+p_heptaneXenon_cat1 <- p_heptaneXenon_cat1 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.8, 0.2),#
+	# legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6		#specifies height of .pdf of plot in units specified by un#
+un <- "in"		#specifies unit of size.w and size.h#
+ggsave(p_heptaneXenon_cat1, file="heptaneXenon_cat1.pdf", width=size.w, height=size.h, units=un)#
+heptaneNonXenon_cat1 <- c("H05H103",#
+						  "H19H201",#
+						  "H03H201",#
+						  "H03H202")#
+#
+heptane_cat2 <- c("H04H201",#
+				  "H11H101",#
+				  "H19H101",#
+				  "H10H101")#
+#
+heptane_cat3 <- c("H04H101",#
+				  "H03H101",#
+				  "H12H101")#
+propGly_cat4 <- c("C080D05",#
+				  "C085D03",#
+				  "C104D05",#
+				  "C077D02",#
+				  "C080D01",#
+				  "C101D05",#
+				  "C104D06",#
+				  "C077D06",#
+				  "C101D06",#
+				  "C077D04")#
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, #
+				   				key=key_time_points, #
+				   				expInterestNames=propGly_cat4)#
+globalDataframe <- dataTable$globalDataframe#
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal#
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal#
+#
+# plot x-y trajectory for all prop/gly drplets with paths color coded#
+# for local velocity magnitude#
+p_propGly_cat4 <- ggplot(subset(df.global, df.global$expname %in% propGly_cat4) )#
+p_propGly_cat4 <- p_propGly_cat4 + geom_point(mapping=aes(x=x_loc_fit, #
+	y=y_loc_fit, colour=sqrt(x_vel_fit^2+y_vel_fit^2)) ) +#
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],#
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),#
+	 shape=17,#
+	 colour="black", size=3) #
+p_propGly_cat4 <- p_propGly_cat4 + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.1, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6		#specifies height of .pdf of plot in units specified by un#
+un <- "in"		#specifies unit of size.w and size.h#
+ggsave(p_propGly_cat4, file="propgly_cat4.pdf", width=size.w, height=size.h, units=un)#
+# propanol/glycerol droplet names for experiments with category 2 paths#
+propGly_cat2 <- c("C077D03",#
+	 			  "C101D02")#
+#
+# propanol/glycerol droplet names for experiments with category 3 paths#
+propGly_cat3 <- c("C108D03")#
+#
+propGly_all <- subset(df.global, fuel == "Pro95/Gly5")#
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, #
+				   				key=key_time_points, #
+				   				expInterestNames=unique(propGly_all$expname))#
+globalDataframe <- dataTable$globalDataframe#
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal#
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal#
+FC_timeIndexMatchGlobal <- dataTable$FC_timeIndexMatchGlobal#
+#
+# plot x-y trajectory for all propanol/glycerol droplets#
+p_propGly_all <- ggplot(subset(df.global, df.global$expname %in% unique(propGly_all$expname) ) )#
+p_propGly_all <- p_propGly_all + geom_point(mapping=aes(x=x_loc_fit, #
+	y=y_loc_fit, colour=expname ) ) +#
+	geom_point(data=globalDataframe[EXT_timeIndexMatchGlobal, ],#
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),#
+	 shape=17,#
+	 colour="black", size=3) #
+p_propGly_all <- p_propGly_all + theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.1, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6			#specifies height of .pdf of plot in units specified by un#
+un <- "in"			#specifies unit of size.w and size.h#
+ggsave(p_propGly_all, file="propgly_XYtraj.pdf", width=size.w, height=size.h, units=un)#
+# generate plots for propanol/glycerol droplets with curved paths.#
+# generate x-y paths, with markers for onset of flame contraction times#
+propGly_interest <- c("C108D02",#
+				  "C108D03",#
+				  "C101D02",#
+				  "C085D03",#
+				  "C104D05",#
+				  "C101D06")#
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, #
+				   				key=key_time_points, #
+				   				expInterestNames=propGly_interest)#
+globalDataframe <- dataTable$globalDataframe#
+IG_timeIndexMatchGlobal <- dataTable$IG_timeIndexMatchGlobal#
+EXT_timeIndexMatchGlobal <- dataTable$EXT_timeIndexMatchGlobal#
+FC_timeIndexMatchGlobal <- dataTable$FC_timeIndexMatchGlobal#
+#
+p_propGly_all2 <- ggplot(subset(df.global, df.global$expname %in% propGly_interest ))#
+p_propGly_all2 <- p_propGly_all2 + geom_point(mapping=aes(x=x_loc_fit, #
+	y=y_loc_fit, colour=expname ) ) +#
+	geom_point(data=globalDataframe[FC_timeIndexMatchGlobal, ],#
+	 mapping=aes(x=x_loc_fit, y=y_loc_fit),#
+	 shape=17,#
+	 colour="black", size=3) #
+p_propGly_all2 <- p_propGly_all2 + theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.1, 0.65),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	xlab(expression("X (mm)") ) +#
+	ylab(expression("Y (mm)") ) 	#
+#
+size.w <- 10	    #specifies width of .pdf of plot in units specified by un#
+size.h <- 6		#specifies height of .pdf of plot in units specified by un#
+un <- "in"		#specifies unit of size.w and size.h#
+ggsave(p_propGly_all2, file="propgly_XYtraj_FCtimes.pdf", width=size.w, height=size.h, units=un)#
+# plot acceleration and burning rate time series for propaynol/glycerol droplets#
+p_propGly_all3 <- ggplot(data = globalDataframe, aes(x=time))#
+p_propGly_all3 <- p_propGly_all3 + #
+	geom_point( aes(y=sqrt(x_acc_fit^2 + y_acc_fit^2), colour=expname))#
+p_propGly_all3 <- p_propGly_all3 + geom_point(mapping=aes(y=k_bw1*4, colour=expname))#
+p_propGly_all3 <- p_propGly_all3 +#
+	scale_y_continuous(sec.axis = sec_axis(~.*5, name=expression("K (mm"^2*"/s)") ) )#
+p_propGly_all3 <- p_propGly_all3 + theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.1, 0.65),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=6), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
 	xlab(expression("Time (s)") ) +#
-	ylab(expression("Velocity Magnitude (mm/s)") )
-velMagnitudePlot
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-globalDataframe[1:3]
-globalDataframe[1:3, ]
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-velMagnitudePlot
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C085D03_RL/C085D03A/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C085D03_RL/C085D03B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C085D03_RL/C085D03D/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_PROPANOL95GLYCEROL5/C104D06_RL/C104D06B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M07_RL/X168M07B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M07_RL/X168M07B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X168M03_RL/X168M03B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M07_RL/X163M07B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('/Volumes/RSRCH/COMB_RESEARCH/FLEX_METHANOL_XENON/X163M04_RL/X163M04B/IPSU1&2timeStampCode_rev1.R', chdir = TRUE)
-source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/igExt_plots.R', chdir = TRUE)
+	ylab(expression("Acceleration (mm/s"^2*")") ) 	#
+ggsave(p_propGly_all3, file="propGly_xyAccBurnRate.pdf", width=size.w, height=size.h, units=un)#
+# plot average K vs average Acc for all droplets where applicable#
+ptsize <- 4.0#
+p_kvAc <- ggplot( subset(dfscatter.global, K_comb != "NA" & fuel != "Heptane") )#
+p_kvAc <- p_kvAc + aes(y=total_acc_comb, x=K_comb)#
+p_kvAc <- p_kvAc + aes(colour=fuel, shape=fuel) #
+p_kvAc <- p_kvAc + geom_point(size=ptsize) +#
+			scale_colour_manual(#
+				values=c(#
+					"#e41a1c",  #red (set1)#
+					"#984ea3",  #purple (set1)#
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)#
+					"#4daf4a",  #green (set1)#
+					"#e7298a",  #pink (dark2)#
+					"#d95f02",  #brown (dark2)#
+					"#377eb8",  #blue (set1)#
+					"#66c2a5"))  #army grn (dark2)#
+p_kvAc <- p_kvAc + 	theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.9, 0.75),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=12), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	# guides(colour=guide_legend(ncol=5)) +#
+	# guides(linetype=guide_legend(ncol=5))	+#
+	ylab(expression("Acceleration (mm/s"^2*")") ) +#
+	xlab(expression( bar(K)["burn"]*" (mm"^2*"/s)") ) 	#
+#
+ggsave(p_kvAc, file="KburnvsAcc_allexp.pdf", width=size.w, height=size.h, units=un)#
+# create scatter plot of average K vs average Acc during combusiton and after extinction#
+KaccBurn_data <- data.frame(dfscatter.global$expname,#
+							dfscatter.global$K_comb,#
+							dfscatter.global$total_acc_comb,#
+							dfscatter.global$fuel)#
+KaccBurn_data <- setNames(KaccBurn_data, c("expname","K_comb","total_acc","fuel"))#
+KaccBurn_data <- subset(KaccBurn_data,K_comb != "NA")#
+KaccBurn_data <- melt(KaccBurn_data, id=c("expname","fuel", "total_acc"))#
+#
+KaccExt_data <- data.frame(dfscatter.global$expname,#
+							dfscatter.global$K_ext,#
+							dfscatter.global$total_acc_ext,#
+							dfscatter.global$fuel)							#
+KaccExt_data <- setNames(KaccExt_data, c("expname","K_ext","total_acc","fuel"))#
+KaccExt_data <- subset(KaccExt_data,K_ext != "NA")#
+KaccExt_data <- melt(KaccExt_data, id=c("expname","fuel","total_acc"))#
+#
+KaccCombined_data <- rbind(KaccBurn_data, KaccExt_data)#
+KavgAavg <- ggplot() +#
+# geom_point(data = KaccBurn_data, aes(x=K_comb,y=total_acc_comb, shape=fuel, colour=fuel), size=4.0) + #
+geom_point(data = subset(KaccCombined_data,fuel != "Heptane"), aes(x=value,y=total_acc, shape=variable), size=4.0) +#
+			aes(colour=fuel) + #
+			scale_colour_manual(#
+				values=c(#
+					"#e41a1c",  #red (set1)#
+					"#984ea3",  #purple (set1)#
+					"#41b6c4",   #teal   (use when plotting EABB vs tdtv)#
+					"#4daf4a",  #green (set1)#
+					"#e7298a",  #pink (dark2)#
+					"#d95f02",  #brown (dark2)#
+					"#377eb8",  #blue (set1)#
+					"#66c2a5")) +  #army grn (dark2)#
+theme_bw() +#
+	theme(plot.title = element_text(colour="black",face="bold",size=6),#
+	legend.position=c(0.8, 0.80),#
+	legend.title = element_blank(),#
+	legend.text = element_text(size=12), #
+	axis.title.x = element_text(size=12),#
+	axis.title.y = element_text(size=12),#
+	legend.background = element_rect(fill="white"),#
+	legend.key.height = unit(5,"mm"),#
+	panel.background = element_rect(fill = "gray90"),#
+	axis.text = element_text(size=12,colour="black") ) +#
+	# guides(colour=guide_legend(ncol=5)) +#
+	# guides(linetype=guide_legend(ncol=5))	+#
+	ylab(expression("Acceleration (mm/s"^2*")") ) +#
+	xlab(expression( bar(K)*" (mm"^2*"/s)") ) #
+ggsave(KavgAavg, file="KavgvsAcc_MethanolPropGly.pdf", width=size.w, height=size.h, units=un)
+propGly_all
+head(propGly_all)
+dataTable <- dataFrameConstruct(csvfilenames=csvfilenames, #
+				   				key=key_time_points, #
+				   				expInterestNames=unique(propGly_all$expname))
+unique(propGly_all$expname)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+csvfilenames
+names(dfscatter.global)
+unique(dfscatter.global$expname)
+source('~/mygitFiles/droplet_trajectories/singleAndMulticomponent/original_data/dropletPaths.R', chdir = TRUE)
+test <- unique(dfscatter.global$expname)
+test[1]
+test[40:-1:30]
+test[30:40]
+test[40:30]
